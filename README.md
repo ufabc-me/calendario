@@ -11,3 +11,5 @@ Sistema para gerenciamento de calendários - ainda não funciona
 * [biblioteca para ical](http://icalendar.readthedocs.org/en/latest/)
 
 * [Servidor](https://www.digitalocean.com/community/tutorials/how-to-set-up-django-with-postgres-nginx-and-gunicorn-on-centos-7)
+
+*[Virtualenv](http://www.dabapps.com/blog/introduction-to-pip-and-virtualenv-python/)
