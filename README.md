@@ -1,7 +1,7 @@
 # calendario
 Sistema para gerenciamento de calendários - ainda não funciona
 
-calendario.ufabc.me/categoria/busca
+[https://calendario.ufabc.me](https://calendario.ufabc.me)
 
 * [Relatório](https://docs.google.com/document/d/1yTcExg9jd4L8NK4ZYPBjoMs3henpSFsJALr9l5_Di2E/pub)
 
