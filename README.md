@@ -3,6 +3,7 @@ Sistema para gerenciamento de calendários - ainda não funciona
 
 calendario.ufabc.me/categoria/busca
 
+* [Relatório](https://docs.google.com/document/d/1yTcExg9jd4L8NK4ZYPBjoMs3henpSFsJALr9l5_Di2E/pub)
 
 * [RFC do iCalendar](https://www.ietf.org/rfc/rfc2445.txt)
 * [iCal implementação em PHP](http://www.davidgagne.net/2008/12/17/2008-2009-ical-college-bowl-schedule/)
