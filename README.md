@@ -7,6 +7,43 @@ Sistema para gerenciamento de calendários - ainda não funciona
 *  [Virtualenv](http://www.dabapps.com/blog/introduction-to-pip-and-virtualenv-python/)
 
 
+
+##Tables
+
+###aluno:
+
+| RA       |   username | email_valido | nome        | ano_ingresso | facebook_id  |
+|:---------|:-----------|:-------------|:------------|:-------------|:-------------|
+| 11111111 | a.sobrn    | 0            | A Sobrenome | 2014         | asdads       |
+
+###calendario:
+
+
+
+
+###disciplina:
+
+| cod_disciplina | nome           | departamento | coordenador | t | p | i |
+|:---------------|:---------------|:------------ |:------------|---|---|---|
+|  mc3310        | Banco de Dados | CMCC         | ZZZ AAA     | 3 | 3 | 3 |
+
+
+
+###turma:
+
+| id_evento | turma | cod_disciplina | ano  | quadrimestre | ano_ingresso |
+|----------:|:------|:---------------|:-----|:------------ |:-------------|
+|         1 | A1    |  mc3310       | 2014 | 2            | 2014         |
+
+
+
+
+
+
+
+
+
+
 ### Tabelas com os dados extraídos dos PDFs da prograd:
 * 2015
   * 2015.2
@@ -19,6 +56,10 @@ Sistema para gerenciamento de calendários - ainda não funciona
     * ???
     * ???
     * ???
+
+
+
+
 
 ### Referências
 * [RFC2445 - iCalendar](https://www.ietf.org/rfc/rfc2445.txt)
