@@ -3,7 +3,7 @@ Sistema para gerenciamento de calendários - ainda não funciona
 
 * [Anotações](anotacoes.md)
 * [Configuração do Servidor (Ubuntu 14.04 LTS)](configuracao_servidor.md)
-* [Relatório](https://docs.google.com/document/d/1yTcExg9jd4L8NK4ZYPBjoMs3henpSFsJALr9l5_Di2E/pub)
+* [Relatório](https://docs.google.com/document/d/1yTcExg9jd4L8NK4ZYPBjoMs3henpSFsJALr9l5_Di2E/pub) (Google Docs)
 *  [Virtualenv](http://www.dabapps.com/blog/introduction-to-pip-and-virtualenv-python/)
 
 

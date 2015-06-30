@@ -1,0 +1,23 @@
+# File types #
+##############
+*.pyc
+*.swo
+*.swp
+*.swn
+
+# Directories #
+###############
+logs/
+
+# Specific files #
+##################
+# database login information
+sistema_calendario/config.py
+
+# OS generated files #
+######################
+.DS_Store?
+ehthumbs.db
+Icon?
+Thumbs.db
+*~
