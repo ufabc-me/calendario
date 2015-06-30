@@ -13,39 +13,46 @@ SA - TEO - Banco de Dados A - Mat (Márcio Katsumi Oikawa) - S301-3
 
 ##Tables
 
-###aluno:
+###aluno (preencher a partir dos pdfs):
 
-| RA       |   username | email_valido | nome        | ano_ingresso | facebook_id  |
-|:---------|:-----------|:-------------|:------------|:-------------|:-------------|
-| 11111111 | a.sobrn    | 0            | A Sobrenome | 2014         | asdads       |
-
-###calendario:
+| RA       | nome        |   username | email_valido | ano_ingresso |
+|:---------|:------------|:-----------|:-------------|:-------------|
+| 11111111 | A Sobrenome | a.sobrn    | 0            | 2014         |
 
 
+###Matrículas:
+| RA  | id_turma |
+|-----|----------|
+|11100| 1        |
 
 
 ###disciplina:
 
-| cod_disciplina | nome           | departamento | coordenador | t | p | i |
-|:---------------|:---------------|:------------ |:------------|---|---|---|
-|  mc3310        | Banco de Dados | CMCC         | ZZZ AAA     | 3 | 3 | 3 |
+| cod_disciplina | nome           | t | p | i | departamento | coordenador |
+|:---------------|:---------------|---|---|---|:------------ |:------------|
+|  mc3310        | Banco de Dados | 3 | 3 | 3 | CMCC         | ZZZ AAA     |
 
 
 
 ###turma:
 
-| id_evento | turma | cod_disciplina | ano  | quadrimestre | ano_ingresso |
-|----------:|:------|:---------------|:-----|:------------ |:-------------|
-|         1 | A1    |  mc3310       | 2014 | 2            | 2014         |
+| id_turma  | ano  | quadrimestre | Campus | cod_disciplina | turma | Periodo |
+|----------:|:-----|:------------ |:------ |:---------------|:------|---------|
+|         1 | 2014 | 2            | SA     |  mc3310        | A1    | Mat     |
 
 
 
 
+###evento:
+|id| categoria | tipo | "Turma" | ano | quad| dia| semana| hora_início | hora_término | all_day | repetição | local  | responsável   |
+|--|-----------|------|---------|-----|-----|----|-------|-------------|--------------|---------|----------- |--------|---------------|
+| 0| aula      | Prat | 1       | 2015| 2   | 1  | 1     |10:00        | 12:00        |  0      | 1          | S301-3 | Marcio Oikawa |
+| 2| aula      | TEO  | 1       | 2015| 2   | 2  | 2     |10:00        | 12:00        |  0      | 1          | S501-3 | Marcio Oikawa |
+| 4| palestra  |      | 0       | 2015| 2   | 4  | 1     |10:00        | 12:00        |  1      | 1          | S402-2 |               |
 
-
-
-
-
+dia = 0-7, dia da semana.
+semana = 0:par;1:ímpar
+repetição (em semanas) = 0:não repete, 1: repete toda semana
 
 ### Tabelas com os dados extraídos dos PDFs da prograd:
 * 2015
