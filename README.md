@@ -7,6 +7,9 @@ Sistema para gerenciamento de calendários - ainda não funciona
 *  [Virtualenv](http://www.dabapps.com/blog/introduction-to-pip-and-virtualenv-python/)
 
 
+```
+SA - TEO - Banco de Dados A - Mat (Márcio Katsumi Oikawa) - S301-3
+```
 
 ##Tables
 
