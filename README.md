@@ -13,3 +13,8 @@ Sistema para gerenciamento de calendários - ainda não funciona
 * [Servidor](https://www.digitalocean.com/community/tutorials/how-to-set-up-django-with-postgres-nginx-and-gunicorn-on-centos-7)
 
 *[Virtualenv](http://www.dabapps.com/blog/introduction-to-pip-and-virtualenv-python/)
+
+
+```bash
+ssh login@server -L 3306:127.0.0.1:3306 -N
+```
