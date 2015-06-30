@@ -1,14 +1,13 @@
-# calendario
+# Calendário.ufabc.me
 Sistema para gerenciamento de calendários - ainda não funciona
 
+* [Anotações](anotacoes.md)
+* [Configuração do Servidor (Ubuntu 14.04 LTS)](configuracao_servidor.md)
 * [Relatório](https://docs.google.com/document/d/1yTcExg9jd4L8NK4ZYPBjoMs3henpSFsJALr9l5_Di2E/pub)
-
-* [Servidor](https://www.digitalocean.com/community/tutorials/how-to-set-up-django-with-postgres-nginx-and-gunicorn-on-centos-7)
 *  [Virtualenv](http://www.dabapps.com/blog/introduction-to-pip-and-virtualenv-python/)
 
 
-Tabelas com os dados extraídos dos PDFs da prograd ([Usando a ferramenta Tabula](http://tabula.technology/)):
-
+### Tabelas com os dados extraídos dos PDFs da prograd:
 * 2015
   * 2015.2
     * Alunos Ingressantes - Campus SA [[PDF](http://prograd.ufabc.edu.br/doc/turmas_ingressantes_sa_2015.2.pdf)] [[CSV](turmas_ingressantes_sa_2015.2.csv)]
@@ -21,7 +20,7 @@ Tabelas com os dados extraídos dos PDFs da prograd ([Usando a ferramenta Tabula
     * ???
     * ???
 
-## Referencias
+### Referências
 * [RFC2445 - iCalendar](https://www.ietf.org/rfc/rfc2445.txt)
 * [Python icalendar library](https://pypi.python.org/pypi/icalendar/3.9.0)
 * [Tabula](http://tabula.technology/) (Tabula is a tool for liberating data tables locked inside PDF files)
