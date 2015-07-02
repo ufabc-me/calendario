@@ -1,5 +1,12 @@
 ### Para configurar a instalação local:
 
+eliminar linhas duplicadas
+```
+awk '!x[$0]++' turmas_salas.csv >> turmas_salas_sem_duplicacao.csv
+
+```
+
+
 MySQL aceita apenas conexões locais, então é necessário iniciar um tunnel ssh (para conectar com o MySQLWorkbench, usar a opção Standard TCP/IP over SSH).
 ```bash
 ssh login@server -L 3306:127.0.0.1:3306
