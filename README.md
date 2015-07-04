@@ -78,8 +78,8 @@ Campus - Tipo - Nome Turma - Turno (Professor) - Sala
   	primary key (id)
   );
 
-	LOAD DATA LOCAL INFILE '/Users/v/Desktop/materias_ordenadas.csv'
-	INTO TABLE disciplina
+  LOAD DATA LOCAL INFILE '/Users/v/Desktop/materias_ordenadas.csv'
+  INTO TABLE disciplina
 	FIELDS TERMINATED BY ','
 	ENCLOSED by '"'
 	LINES TERMINATED BY '\n'
@@ -92,13 +92,13 @@ Campus - Tipo - Nome Turma - Turno (Professor) - Sala
   + `ano` - Ano em que essa matricula será cursada.
   + `quadrimestre` - Quadrimestre em que essa matricula será cursada.
 
-	| ra       | id_turma | ano  | quadrimestre |
-	|----------|:---------|:-----|--------------|
-	| 11111111 | 2        | 2015 | 2            |
+  | ra       | id_turma | ano  | quadrimestre |
+  |----------|:---------|:-----|--------------|
+  | 11111111 | 2        | 2015 | 2            |
 
-	```SQL
-	Codiguinho SQL para criação
-	```
+  ```SQL
+  Codiguinho SQL para criação
+  ```
 
 
 ###Matrículas:
