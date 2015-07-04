@@ -22,6 +22,9 @@ SA - TEO - Banco de Dados A - Mat (Márcio Katsumi Oikawa) - S301-3
 Campus - Tipo - Nome Turma - Turno (Professor) - Sala
 ```
 
+##introdução
+
+
 ##Tabelas
 - [3.1](#3.1) <a name='3.1'></a> **alunos**: Onde serão armazenadas as informações únicas de cada aluno.
 	+ `ra` - Primary Key, número de matrícula do aluno.
