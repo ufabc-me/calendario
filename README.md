@@ -5,14 +5,14 @@
 Disponível em [https://calendario.ufabc.me](https://calendario.ufabc.me)
 
 ##Índice
- 1. [Introdução](#1.Introdução)
- 1. [Objetivo](#2.Objetivo)
- 1. [Tabelas](#3.Tabelas)
- 1. [Stored Procedures](#4.Stored-Procedures)
- 1. [Dados da Prograd](#5.Dados-da-PROGRAD)
- 1. [Servidor](#6.Servidor)
- 1. [Outros](#7.Outros)
- 1. [Referências](#8.Referências)
+ 1. [Introdução](#1Introdução)
+ 1. [Objetivo](#2Objetivo)
+ 1. [Tabelas](#3Tabelas)
+ 1. [Stored Procedures](#4Stored-Procedures)
+ 1. [Dados da Prograd](#5Dados-da-PROGRAD)
+ 1. [Servidor](#6Servidor)
+ 1. [Outros](#7Outros)
+ 1. [Referências](#8Referências)
 
 
 
@@ -182,7 +182,7 @@ Campus - Tipo - Nome Turma - Turno (Professor) - Sala
 * [Virtualenv](http://www.dabapps.com/blog/introduction-to-pip-and-virtualenv-python/)
 
 
-###8.Referências
+###8.eferências
 * [RFC2445 - iCalendar](https://www.ietf.org/rfc/rfc2445.txt)
 * [Python icalendar library](https://pypi.python.org/pypi/icalendar/3.9.0)
 * [Tabula](http://tabula.technology/) (Tabula is a tool for liberating data tables locked inside PDF files)
