@@ -12,10 +12,7 @@ Disponível em [https://calendario.ufabc.me](https://calendario.ufabc.me)
  1. [Outros](#outros)
  1. [Referências](#referências)
 
-* [Anotações](anotacoes.md)
-* [Configuração do Servidor (Ubuntu 14.04 LTS)](configuracao_servidor.md)
-* [Relatório](https://docs.google.com/document/d/1yTcExg9jd4L8NK4ZYPBjoMs3henpSFsJALr9l5_Di2E/pub) (Google Docs)
-* [Virtualenv](http://www.dabapps.com/blog/introduction-to-pip-and-virtualenv-python/)
+
 
 
 ```
@@ -31,29 +28,27 @@ Campus - Tipo - Nome Turma - Turno (Professor) - Sala
 	+ `username` - Parte que vem antes do email @aluno.ufabc.edu.br, mesmo login do Tidia.
 	+ `email_valido` - Flag booleana para armazenar a validação por email
 	+ `ano_ingresso` - Ano de ingresso
+	| RA       | nome        | username   | email_valido | ano_ingresso |
+	|:---------|:------------|:-----------|:-------------|:-------------|
+	| 11111111 | A Sobrenome | a.sobrn    | 0            | 2014         |
 
+	```SQL
+	CREATE TABLE `aluno` (
+		ra INT(8) NOT NULL,
+		nome VARCHAR(100) NOT NULL,
+		username VARCHAR(50),
+		email_valido boolean default false,
+		ano_ingresso INT(4),
+	  primary key (ra)
+	);
 
-
-		| RA       | nome        | username   | email_valido | ano_ingresso |
-		|:---------|:------------|:-----------|:-------------|:-------------|
-		| 11111111 | A Sobrenome | a.sobrn    | 0            | 2014         |
-
-		```SQL
-		CREATE TABLE `aluno` (
-			ra INT(8) NOT NULL,
-			nome VARCHAR(100) NOT NULL,
-			username VARCHAR(50),
-			email_valido boolean default false,
-			ano_ingresso INT(4),
-		  primary key (ra)
-		);
-
-		LOAD DATA LOCAL INFILE 'tabelas_tratadas_para_importacao/alunos.csv'
-		INTO TABLE aluno
-		FIELDS TERMINATED BY ','
-		LINES TERMINATED BY '\n'
-		IGNORE 1 ROWS;
-		```
+	LOAD DATA LOCAL INFILE 'tabelas_tratadas_para_importacao/alunos.csv'
+	INTO TABLE aluno
+	FIELDS TERMINATED BY ','
+	LINES TERMINATED BY '\n'
+	IGNORE 1 ROWS;
+	```
+	
 - [3.2](#3.2) <a name='3.2'></a> **disciplinas**: Relaciona todas as disciplinas ofertáveis pela universidade.
   + `id` - Primary Key, número único para identificação da disciplina (definido arbitrariamente)
   + `codigo` - Código de identificação da disciplina usado pela prograd
@@ -65,9 +60,6 @@ Campus - Tipo - Nome Turma - Turno (Professor) - Sala
   + `t` - Horas de teoria
   + `p` - Horas de prática
   + `i` - Horas de estudo individual
-
-
-
 	| **id** | codigo  | nome           | apelido | departamento | coordenador | pagina_ufabchelp | t | p | i |
 	|--------|:--------|:---------------|---------|:------------ |:------------|:-----------------|---|---|---|
 	| 1      | mc3310  | Banco de Dados | BD      | CMCC         | ZZZ AAA     | asdad            | 3 | 3 | 3 |
@@ -90,21 +82,6 @@ Campus - Tipo - Nome Turma - Turno (Professor) - Sala
 	LINES TERMINATED BY '\n'
 	(codigo,nome);
 	```
-
-
-
-
-
-
-
-
-
-###aluno (preencher a partir dos pdfs):
-
-
-
-
-
 ###Matrículas:
 | **RA** | id_turma |
 |--------|----------|
@@ -147,7 +124,8 @@ dia = 0-7, dia da semana.
 semana = 0:par;1:ímpar
 repetição (em semanas) = 0:não repete, 1: repete toda semana
 
-### Tabelas com os dados extraídos dos PDFs da prograd:
+
+### Dados da Prograd
 * 2015
   * 2015.2
     * Alunos Ingressantes - Campus SA [[PDF](original_data/2015.2/turmas_ingressantes_sa_2015.2.pdf)] [[CSV](original_data/2015.2/turmas_ingressantes_sa_2015.2.csv)]
@@ -159,6 +137,14 @@ repetição (em semanas) = 0:não repete, 1: repete toda semana
     * ???
     * ???
     * ???
+
+### Outros
+
+* [Anotações](anotacoes.md)
+* [Configuração do Servidor (Ubuntu 14.04 LTS)](configuracao_servidor.md)
+* [Relatório](https://docs.google.com/document/d/1yTcExg9jd4L8NK4ZYPBjoMs3henpSFsJALr9l5_Di2E/pub) (Google Docs)
+* [Virtualenv](http://www.dabapps.com/blog/introduction-to-pip-and-virtualenv-python/)
+
 
 ### Referências
 * [RFC2445 - iCalendar](https://www.ietf.org/rfc/rfc2445.txt)
