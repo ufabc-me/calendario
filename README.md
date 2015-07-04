@@ -65,6 +65,7 @@ Campus - Tipo - Nome Turma - Turno (Professor) - Sala
     + `t` - asdasd
     + `p` - asdasd
     + `i` - asdasd
+
 		| **id** | codigo  | nome           | apelido | departamento | coordenador | pagina_ufabchelp | t | p | i |
 		|--------|:--------|:---------------|---------|:------------ |:------------|:-----------------|---|---|---|
 		| 1      | mc3310  | Banco de Dados | BD      | CMCC         | ZZZ AAA     | asdad            | 3 | 3 | 3 |
