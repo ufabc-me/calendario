@@ -1,7 +1,5 @@
 # Calendário.ufabc.me
-
-
-*:warning: ainda não funciona - **Não-oficial** :warning:*
+:warning: **ainda não funciona** - **Não-oficial** :warning:
 
 >Sistema para gerenciamento de calendários da UFABC desenvolvido como projeto para a disciplina *MC3310 - Banco de Dados*, no segundo quadrimestre de 2015.
 
