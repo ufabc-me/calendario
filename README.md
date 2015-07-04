@@ -63,20 +63,20 @@ Campus - Tipo - Nome Turma - Turno (Professor) - Sala
   + `i` - Quantidade de horas para estudo individual.
 
 
-	| id | codigo  | nome           | apelido | departamento | coordenador | pagina_ufabchelp | t | p | i |
-	|----|:--------|:---------------|---------|:------------ |:------------|:-----------------|---|---|---|
-	| 1  | mc3310  | Banco de Dados | BD      | CMCC         | ZZZ AAA     | asdad            | 3 | 3 | 3 |
+  | id | codigo  | nome           | apelido | departamento | coordenador | pagina_ufabchelp | t | p | i |
+  |----|:--------|:---------------|---------|:------------ |:------------|:-----------------|---|---|---|
+  | 1  | mc3310  | Banco de Dados | BD      | CMCC         | ZZZ AAA     | asdad            | 3 | 3 | 3 |
 
-	```SQL
-	CREATE TABLE `disciplina` (
-		id MEDIUMINT NOT NULL AUTO_INCREMENT,
-		codigo varchar(10)NOT NULL,
-		nome varchar(100)NOT NULL,
-		abreviatura varchar(10),
-		departamento varchar(20),
-		coordenador varchar(50),
-		primary key (id)
-	);
+  ```SQL
+  CREATE TABLE `disciplina` (
+  	id MEDIUMINT NOT NULL AUTO_INCREMENT,
+  	codigo varchar(10)NOT NULL,
+  	nome varchar(100)NOT NULL,
+  	abreviatura varchar(10),
+  	departamento varchar(20),
+  	coordenador varchar(50),
+  	primary key (id)
+  );
 
 	LOAD DATA LOCAL INFILE '/Users/v/Desktop/materias_ordenadas.csv'
 	INTO TABLE disciplina
@@ -89,8 +89,8 @@ Campus - Tipo - Nome Turma - Turno (Professor) - Sala
 - [3.3](#3.3) <a name='3.3'></a> **matriculas**: Relaciona as matrículas por ano-quadrimestre.
   + `ra` - Foreign Key (alunos) número de matrícula do aluno.
   + `id_turma` - Foreign Key (turmas) número de identificação da turma.
-	+ `ano` - Ano em que essa matricula será cursada.
-	+ `quadrimestre` - Quadrimestre em que essa matricula será cursada.
+  + `ano` - Ano em que essa matricula será cursada.
+  + `quadrimestre` - Quadrimestre em que essa matricula será cursada.
 
 	| ra       | id_turma | ano  | quadrimestre |
 	|----------|:---------|:-----|--------------|
