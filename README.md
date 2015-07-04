@@ -48,30 +48,13 @@ SA - TEO - Banco de Dados A - Mat (Márcio Katsumi Oikawa) - S301-3
 
 
 
-| a  |  b | c  | d  | e  | f  | g  | h  | i  | j  | k  |l   |m   |n   |
+| id | categoria | tipo | turma | ano | quadrimestre | dia | semana | hora_inicio | hora_termino | all_day | repeticao | campus | responsavel |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 |  1 |  1 | 1  | 1  | 1  | 1  | 1  | 1  | 1  |1   | 1  | 1  | 1  |1   |
 |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
 
 
 
-Nome | Tipo
------- | -----
-id  | More things
-categoria  | More things
-tipo  | More things
-turma  | More things
-ano  | More things
-quadrimestre  | More things
-dia  | More things
-semana  | More things
-hora_inicio  | More things
-hora_termino  | More things
-all_day | asd
-repeticao |
-campus | dsf
-local |sdf
-responsavel |asd
 
 ####Código para geração
 ```
