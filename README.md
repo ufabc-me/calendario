@@ -1,6 +1,7 @@
 # Calendário.ufabc.me
 
 *Sistema para gerenciamento de calendários - ainda não funciona*
+
 Disponível em [https://calendario.ufabc.me](https://calendario.ufabc.me)
 
 ##Índice
@@ -24,29 +25,48 @@ Campus - Tipo - Nome Turma - Turno (Professor) - Sala
 ```
 
 ##Tables
+  - [1.1](#1.1) <a name='1.1'></a> **alunos**: Onde serão armazenadas as informações únicas de cada aluno.
+
+    + `ra` - Primary Key, número de matrícula do aluno.
+    + `nome` - Nome completo (tão completo quanto estiver na lista da prograd - não contém caracteres especiais)
+    + `username` - Parte que vem antes do email @aluno.ufabc.edu.br, mesmo login do Tidia.
+    + `email_valido` - Flag booleana para armazenar a validação por email
+    + `ano_ingresso` - Ano de ingresso
+
+		| RA       | nome        | username   | email_valido | ano_ingresso |
+		|:---------|:------------|:-----------|:-------------|:-------------|
+		| 11111111 | A Sobrenome | a.sobrn    | 0            | 2014         |
+
+		```SQL
+		CREATE TABLE `aluno` (
+			ra INT(8) NOT NULL,
+			nome VARCHAR(100) NOT NULL,
+			username VARCHAR(50),
+			email_valido boolean default false,
+			ano_ingresso INT(4),
+		  primary key (ra)
+		);
+
+		LOAD DATA LOCAL INFILE 'tabelas_tratadas_para_importacao/alunos.csv'
+		INTO TABLE aluno
+		FIELDS TERMINATED BY ','
+		LINES TERMINATED BY '\n'
+		IGNORE 1 ROWS;
+		```
+
+
+
+
+
+
+
+
 
 ###aluno (preencher a partir dos pdfs):
 
-| **RA**   | nome        | username   | email_valido | ano_ingresso |
-|:---------|:------------|:-----------|:-------------|:-------------|
-| 11111111 | A Sobrenome | a.sobrn    | 0            | 2014         |
 
-```SQL
-CREATE TABLE `aluno` (
-	ra INT(8) NOT NULL,
-	nome VARCHAR(100) NOT NULL,
-	username VARCHAR(50),
-	email_valido boolean default false,
-	ano_ingresso INT(4),
-  primary key (ra)
-);
 
-LOAD DATA LOCAL INFILE 'tabelas_tratadas_para_importacao/alunos.csv'
-INTO TABLE aluno
-FIELDS TERMINATED BY ','
-LINES TERMINATED BY '\n'
-IGNORE 1 ROWS;
-```
+
 
 ###Matrículas:
 | **RA** | id_turma |
