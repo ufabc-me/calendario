@@ -86,6 +86,11 @@ Campus - Tipo - Nome Turma - Turno (Professor) - Sala
 	(codigo,nome);
 	```
 
+	- [3.3](#3.3) <a name='3.3'></a> **matriculas**: Relaciona todas as disciplinas ofertáveis pela universidade.
+	  + `id` - Primary Key, número único para identificação da disciplina (definido arbitrariamente).
+	  + `codigo` - Código de identificação da disciplina usado pela prograd.
+
+
 ###Matrículas:
 | **RA** | id_turma |
 |--------|----------|
