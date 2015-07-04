@@ -1,6 +1,8 @@
 # Calendário.ufabc.me
 
-*Sistema para gerenciamento de calendários - ainda não funciona*
+
+*:warning: ainda não funciona :warning:*
+*Sistema para gerenciamento de calendários* 
 
 Disponível em [https://calendario.ufabc.me](https://calendario.ufabc.me)
 
