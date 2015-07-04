@@ -1,11 +1,17 @@
 # Calendário.ufabc.me
 
 
-*:warning: ainda não funciona :warning:*
+*:warning: ainda não funciona - **Não-oficial** :warning:*
 
-*Sistema para gerenciamento de calendários*
+>Sistema para gerenciamento de calendários da UFABC desenvolvido como projeto para a disciplina *MC3310 - Banco de Dados*, no segundo quadrimestre de 2015.
 
-Disponível em [https://calendario.ufabc.me](https://calendario.ufabc.me)
+> Disponível em [https://calendario.ufabc.me](https://calendario.ufabc.me)
+
+> Author: [Victor Fischer Scattone](https://victor.so) e Paulo Gabriel Massa
+
+> Professor: Márcio Katsumi Oikawa
+
+
 
 ##Índice
  1. [Introdução](#1Introdução)
@@ -23,13 +29,14 @@ Disponível em [https://calendario.ufabc.me](https://calendario.ufabc.me)
 
 ##1.Introdução
 
+
+
+
 ##2.Objetivo
 ```
 SA - TEO - Banco de Dados A - Mat (Márcio Katsumi Oikawa) - S301-3
 Campus - Tipo - Nome Turma - Turno (Professor) - Sala
 ```
-
-
 
 ##3.Tabelas
 - [3.1](#3.1) <a name='3.1'></a> **alunos**: Onde serão armazenadas as informações únicas de cada aluno.
