@@ -62,6 +62,7 @@ Campus - Tipo - Nome Turma - Turno (Professor) - Sala
   + `p` - Quantidade de horas para prática.
   + `i` - Quantidade de horas para estudo individual.
 
+
 	| id | codigo  | nome           | apelido | departamento | coordenador | pagina_ufabchelp | t | p | i |
 	|----|:--------|:---------------|---------|:------------ |:------------|:-----------------|---|---|---|
 	| 1  | mc3310  | Banco de Dados | BD      | CMCC         | ZZZ AAA     | asdad            | 3 | 3 | 3 |
