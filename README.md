@@ -24,7 +24,9 @@
 ##1.Introdução
 
 >Todo quadrimestre são realizadas novas matrículas, porém essa lista é disponibilizada de uma forma pouco prática para os alunos.
+
 > Duas listas, uma de **matrículas deferidas** (que relaciona o RA/Nome do Aluno à string completa do nome da turma), e **turmas_e_salas** (código,nome,dias da semana, horários e professores). Os alunos acabam por ter que relacionar essas duas tabelas manualmente, o que é relativamente trabalhoso e repetitivo.
+
 > Decidimos criar uma ferramenta que permita ao aluno informar apenas o seu RA (registro de aluno) e gerar a sua grade formatada amigavelmente. Para maior comodidade, essa grade poderá ser baixada no formato **.CSV** (compatível com qualquer software de planilhas) ou então **iCal** (para ser importado em agendas como *Google Calendar*, *Apple Calendar*, *Outlook*...)
 
 
