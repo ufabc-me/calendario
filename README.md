@@ -41,7 +41,7 @@ IGNORE 1 ROWS;
 ###Matrículas:
 | **RA** | id_turma |
 |--------|----------|
-|11100111| 1        |
+|11111111| 1        |
 
 ###disciplina:
 | **id** | codigo  | nome           | abreviatura | t | p | i | departamento | coordenador |
