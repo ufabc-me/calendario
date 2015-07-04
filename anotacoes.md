@@ -1,8 +1,12 @@
 ### Para configurar a instalação local:
 
-eliminar linhas duplicadas
+Comandos úteis para tratar as tabelas
 ```
+Eliminar linhas repetidas:
 awk '!x[$0]++' turmas_salas.csv >> turmas_salas_sem_duplicacao.csv
+
+Ordenar linhas em ordem alfanumérica
+sort -n turmas_salas_sem_duplicacao.csv >> materias_ordenadas.csv
 
 ```
 
