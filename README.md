@@ -20,15 +20,16 @@ Disponível em [https://calendario.ufabc.me](https://calendario.ufabc.me)
 
 
 
-```
-SA - TEO - Banco de Dados A - Mat (Márcio Katsumi Oikawa) - S301-3
-
-Campus - Tipo - Nome Turma - Turno (Professor) - Sala
-```
 
 ##1.Introdução
 
 ##2.Objetivo
+```
+SA - TEO - Banco de Dados A - Mat (Márcio Katsumi Oikawa) - S301-3
+Campus - Tipo - Nome Turma - Turno (Professor) - Sala
+```
+
+
 
 ##3.Tabelas
 - [3.1](#3.1) <a name='3.1'></a> **alunos**: Onde serão armazenadas as informações únicas de cada aluno.
