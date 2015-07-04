@@ -28,8 +28,6 @@ Campus - Tipo - Nome Turma - Turno (Professor) - Sala
 ##2-Objetivo
 
 ##3-Tabelas
-	[3.1 - Alunos](#3.1)
-
 - [3.1](#3.1) <a name='3.1'></a> **alunos**: Onde serão armazenadas as informações únicas de cada aluno.
 	+ `ra` - Primary Key, número de matrícula do aluno.
 	+ `nome` - Nome completo (tão completo quanto estiver na lista da prograd - não contém caracteres especiais).
