@@ -54,7 +54,6 @@ Campus - Tipo - Nome Turma - Turno (Professor) - Sala
 		IGNORE 1 ROWS;
 		```
 	- [3.2](#3.2) <a name='3.2'></a> **disciplinas**: Relaciona todas as disciplinas ofertáveis pela universidade.
-
     + `id` - Primary Key, número único para identificação da disciplina (definido arbitrariamente)
     + `codigo` - Código de identificação da disciplina usado pela prograd
     + `nome` - Nome completo da disciplina
