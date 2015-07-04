@@ -24,8 +24,8 @@ SA - TEO - Banco de Dados A - Mat (Márcio Katsumi Oikawa) - S301-3
 Campus - Tipo - Nome Turma - Turno (Professor) - Sala
 ```
 
-##Tables
-  - [1.1](#1.1) <a name='1.1'></a> **alunos**: Onde serão armazenadas as informações únicas de cada aluno.
+##Tabelas
+  - [3.1](#3.1) <a name='3.1'></a> **alunos**: Onde serão armazenadas as informações únicas de cada aluno.
 
     + `ra` - Primary Key, número de matrícula do aluno.
     + `nome` - Nome completo (tão completo quanto estiver na lista da prograd - não contém caracteres especiais)
@@ -53,6 +53,40 @@ Campus - Tipo - Nome Turma - Turno (Professor) - Sala
 		LINES TERMINATED BY '\n'
 		IGNORE 1 ROWS;
 		```
+		- [3.2](#3.2) <a name='3.2'></a> **disciplinas**: Relaciona todas as disciplinas ofertáveis pela universidade.
+	    + `id` - Primary Key, número único para identificação da disciplina (definido arbitrariamente)
+	    + `codigo` - Código de identificação da disciplina usado pela prograd
+	    + `nome` - Nome completo da disciplina
+	    + `apelido` - Abreviação ou nome comumente usado pelos alunos para se referir à disciplina (Ex. FenMec, para Fenômenos Mecânicos)
+	    + `departamento` - Departamento responsável por ofertar a disciplina
+	    + `coordenador` - Coordenador da disciplina
+	    + `pagina_ufabchelp` - URL correspondente da disciplina no sistema UFABCHelp
+			+ `t`
+			+ `p`
+			+ `i`
+
+			| **id** | codigo  | nome           | apelido | departamento | coordenador | pagina_ufabchelp | t | p | i |
+			|--------|:--------|:---------------|---------|:------------ |:------------|:-----------------|---|---|---|
+			| 1      | mc3310  | Banco de Dados | BD      | CMCC         | ZZZ AAA     | asdad            | 3 | 3 | 3 | 
+
+			```SQL
+			CREATE TABLE `disciplina` (
+			  id MEDIUMINT NOT NULL AUTO_INCREMENT,
+			  codigo varchar(10)NOT NULL,
+			  nome varchar(100)NOT NULL,
+			  abreviatura varchar(10),
+			  departamento varchar(20),
+			  coordenador varchar(50),
+				primary key (id)
+			);
+
+			LOAD DATA LOCAL INFILE '/Users/v/Desktop/materias_ordenadas.csv'
+			INTO TABLE disciplina
+			FIELDS TERMINATED BY ','
+			ENCLOSED by '"'
+			LINES TERMINATED BY '\n'
+			(codigo,nome);
+			```
 
 
 
@@ -73,29 +107,7 @@ Campus - Tipo - Nome Turma - Turno (Professor) - Sala
 |--------|----------|
 |11111111| 1        |
 
-###disciplina:
-| **id** | codigo  | nome           | abreviatura | t | p | i | departamento | coordenador |
-|--------|:--------|:---------------|-------------|---|---|---|:------------ |:------------|
-| 1      | mc3310  | Banco de Dados | BD          | 3 | 3 | 3 | CMCC         | ZZZ AAA     |
 
-```SQL
-CREATE TABLE `disciplina` (
-  id MEDIUMINT NOT NULL AUTO_INCREMENT,
-  codigo varchar(10)NOT NULL,
-  nome varchar(100)NOT NULL,
-  abreviatura varchar(10),
-  departamento varchar(20),
-  coordenador varchar(50),
-	primary key (id)
-);
-
-LOAD DATA LOCAL INFILE '/Users/v/Desktop/materias_ordenadas.csv'
-INTO TABLE disciplina
-FIELDS TERMINATED BY ','
-ENCLOSED by '"'
-LINES TERMINATED BY '\n'
-(codigo,nome);
-```
 
 ###turma:
 | **id** | ano  | quadrimestre | campus | id_disciplina | turma | periodo |
