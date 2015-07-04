@@ -43,7 +43,35 @@ SA - TEO - Banco de Dados A - Mat (Márcio Katsumi Oikawa) - S301-3
 
 
 
+
 ###evento:
+
+Nome | Tipo
+------ | -----
+id  | More things
+categoria  | More things
+tipo  | More things
+turma  | More things
+ano  | More things
+quadrimestre  | More things
+dia  | More things
+semana  | More things
+hora_inicio  | More things
+hora_termino  | More things
+all_day | asd
+repeticao |
+campus | dsf
+local |sdf
+responsavel |asd
+
+####Código para geração
+```
+CREATE 
+```
+
+
+
+
 |id| categoria | tipo | Turma | ano | quad| dia| semana| hora_início | hora_término | all_day | repetição | local  | responsável       |
 |--|-----------|------|-------|-----|-----|----|-------|-------------|--------------|---------|-----------|--------|-------------------|
 | 0| aula      | Prat | 1     | 2015| 2   | 1  | 1     |10:00        | 12:00        |  0      | 1         | S301-3 | Marcio Oikawa     |
