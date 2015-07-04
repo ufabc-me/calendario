@@ -54,7 +54,7 @@ Campus - Tipo - Nome Turma - Turno (Professor) - Sala
 		IGNORE 1 ROWS;
 		```
 	- [3.2](#3.2) <a name='3.2'></a> **disciplinas**: Relaciona todas as disciplinas ofertáveis pela universidade.
-	
+
     + `id` - Primary Key, número único para identificação da disciplina (definido arbitrariamente)
     + `codigo` - Código de identificação da disciplina usado pela prograd
     + `nome` - Nome completo da disciplina
@@ -62,9 +62,9 @@ Campus - Tipo - Nome Turma - Turno (Professor) - Sala
     + `departamento` - Departamento responsável por ofertar a disciplina
     + `coordenador` - Coordenador da disciplina
     + `pagina_ufabchelp` - URL correspondente da disciplina no sistema UFABCHelp
-		+ `t` -
-		+ `p` -
-		+ `i` -
+    + `t` -
+    + `p` -
+    + `i` -
 
 		| **id** | codigo  | nome           | apelido | departamento | coordenador | pagina_ufabchelp | t | p | i |
 		|--------|:--------|:---------------|---------|:------------ |:------------|:-----------------|---|---|---|
