@@ -62,9 +62,9 @@ Campus - Tipo - Nome Turma - Turno (Professor) - Sala
     + `departamento` - Departamento responsável por ofertar a disciplina
     + `coordenador` - Coordenador da disciplina
     + `pagina_ufabchelp` - URL correspondente da disciplina no sistema UFABCHelp
-    + `t` -
-    + `p` -
-    + `i` -
+    + `t` - asdasd
+    + `p` - asdasd
+    + `i` - asdasd
 
 		| **id** | codigo  | nome           | apelido | departamento | coordenador | pagina_ufabchelp | t | p | i |
 		|--------|:--------|:---------------|---------|:------------ |:------------|:-----------------|---|---|---|
