@@ -86,9 +86,19 @@ Campus - Tipo - Nome Turma - Turno (Professor) - Sala
 	(codigo,nome);
 	```
 
-- [3.3](#3.3) <a name='3.3'></a> **matriculas**: Relaciona todas as disciplinas ofertáveis pela universidade.
-  + `id` - Primary Key, número único para identificação da disciplina (definido arbitrariamente).
-  + `codigo` - Código de identificação da disciplina usado pela prograd.
+- [3.3](#3.3) <a name='3.3'></a> **matriculas**: Relaciona as matrículas por ano-quadrimestre.
+  + `ra` - Foreign Key (alunos) número de matrícula do aluno.
+  + `id_turma` - Foreign Key (turmas) número de identificação da turma.
+	+ `ano` - Ano em que essa matricula será cursada.
+	+ `quadrimestre` - Quadrimestre em que essa matricula será cursada.
+
+	| ra       | id_turma | ano  | quadrimestre |
+	|----------|:---------|:-----|--------------|
+	| 11111111 | 2        | 2015 | 2            |
+
+	```SQL
+	Codiguinho SQL para criação
+	```
 
 
 ###Matrículas:
