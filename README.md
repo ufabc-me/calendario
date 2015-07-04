@@ -15,15 +15,15 @@ SA - TEO - Banco de Dados A - Mat (Márcio Katsumi Oikawa) - S301-3
 
 ###aluno (preencher a partir dos pdfs):
 
-| RA       | nome        |   username | email_valido | ano_ingresso |
+| **RA**   | nome        |   username | email_valido | ano_ingresso |
 |:---------|:------------|:-----------|:-------------|:-------------|
 | 11111111 | A Sobrenome | a.sobrn    | 0            | 2014         |
 
 
 ###Matrículas:
-| RA  | id_turma |
-|-----|----------|
-|11100| 1        |
+| **RA** | id_turma |
+|--------|----------|
+|11100111| 1        |
 
 
 ###disciplina:
@@ -38,7 +38,7 @@ SA - TEO - Banco de Dados A - Mat (Márcio Katsumi Oikawa) - S301-3
 
 | id_turma  | ano  | quadrimestre | Campus | cod_disciplina | turma | Periodo |
 |----------:|:-----|:------------ |:------ |:---------------|:------|---------|
-|         1 | 2014 | 2            | SA     |  mc3310        | A1    | Mat     |
+|     **1** | 2014 | 2            | SA     |  mc3310        | A1    | Mat     |
 
 
 
@@ -48,7 +48,7 @@ SA - TEO - Banco de Dados A - Mat (Márcio Katsumi Oikawa) - S301-3
 
 
 
-| id | categoria | tipo | turma | ano | quadrimestre | dia | semana | hora_inicio | hora_termino | all_day | repeticao | campus | responsavel |
+| **id** | categoria | tipo | turma | ano | quadrimestre | dia | semana | hora_inicio | hora_termino | all_day | repeticao | campus | responsavel |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | 0| aula      | Prat | 1     | 2015| 2   | 1  | 1     |10:00        | 12:00        |  0      | 1         | S301-3 | Marcio Oikawa     |
 | 2| aula      | TEO  | 1     | 2015| 2   | 2  | 2     |10:00        | 12:00        |  0      | 1         | S501-3 | Marcio Oikawa     |
@@ -60,15 +60,6 @@ SA - TEO - Banco de Dados A - Mat (Márcio Katsumi Oikawa) - S301-3
 ```
 CREATE
 ```
-
-
-
-
-|id| categoria | tipo | Turma | ano | quad| dia| semana| hora_início | hora_término | all_day | repetição | local  | responsável       |
-|--|-----------|------|-------|-----|-----|----|-------|-------------|--------------|---------|-----------|--------|-------------------|
-| 0| aula      | Prat | 1     | 2015| 2   | 1  | 1     |10:00        | 12:00        |  0      | 1         | S301-3 | Marcio Oikawa     |
-| 2| aula      | TEO  | 1     | 2015| 2   | 2  | 2     |10:00        | 12:00        |  0      | 1         | S501-3 | Marcio Oikawa     |
-| 4| palestra  | pel  | 0     | 2015| 2   | 4  | 1     |10:00        | 12:00        |  1      | 1         | S402-2 | John "Maddog" Hal |
 
 dia = 0-7, dia da semana.
 semana = 0:par;1:ímpar
