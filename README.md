@@ -32,6 +32,8 @@ Campus - Tipo - Nome Turma - Turno (Professor) - Sala
 	+ `email_valido` - Flag booleana para armazenar a validação por email
 	+ `ano_ingresso` - Ano de ingresso
 
+
+
 		| RA       | nome        | username   | email_valido | ano_ingresso |
 		|:---------|:------------|:-----------|:-------------|:-------------|
 		| 11111111 | A Sobrenome | a.sobrn    | 0            | 2014         |
@@ -63,6 +65,8 @@ Campus - Tipo - Nome Turma - Turno (Professor) - Sala
   + `t` - Horas de teoria
   + `p` - Horas de prática
   + `i` - Horas de estudo individual
+
+
 
 	| **id** | codigo  | nome           | apelido | departamento | coordenador | pagina_ufabchelp | t | p | i |
 	|--------|:--------|:---------------|---------|:------------ |:------------|:-----------------|---|---|---|
