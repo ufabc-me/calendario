@@ -39,7 +39,7 @@ Campus - Tipo - Nome Turma - Turno (Professor) - Sala
 	+ `email_valido` - Flag booleana para armazenar a validação por email.
 	+ `ano_ingresso` - Ano de ingresso.
 
-	| RA       | nome     | username | email_valido | ano_ingresso |
+	| ra       | nome     | username | email_valido | ano_ingresso |
 	|:---------|:---------|:---------|:-------------|:-------------|
 	| 11111111 | John Doe | j.doe    | 0            | 2014         |
 
