@@ -48,11 +48,11 @@ SA - TEO - Banco de Dados A - Mat (Márcio Katsumi Oikawa) - S301-3
 
 
 
-| **id** | categoria | tipo | turma | ano | quadrimestre | dia | semana | hora_inicio | hora_termino | all_day | repeticao | campus | responsavel |
-|--------|-----------|------|:-----:|:---:|:------------:|-----|--------|-------------|--------------|---------|-----------|--------|-------------|
-| 0| aula      | Prat | 1     | 2015| 2   | 1  | 1     |10:00        | 12:00        |  0      | 1         | S301-3 | Marcio Oikawa     |
-| 2| aula      | TEO  | 1     | 2015| 2   | 2  | 2     |10:00        | 12:00        |  0      | 1         | S501-3 | Marcio Oikawa     |
-| 4| palestra  | pel  | 0     | 2015| 2   | 4  | 1     |10:00        | 12:00        |  1      | 1         | S402-2 | John "Maddog" Hal |
+| **id** | categoria | tipo | turma | ano | quadrimestre | dia | semana | hora_inicio | hora_termino | all_day | repeticao | campus | responsavel       |
+|--------|-----------|------|:-----:|:---:|:------------:|-----|--------|-------------|--------------|---------|-----------|--------|-------------------|
+| 0      | aula      | Prat | 1     | 2015| 2            | 1   | 1      |10:00        | 12:00        |  0      | 1         | S301-3 | Marcio Oikawa     |
+| 2      | aula      | TEO  | 1     | 2015| 2            | 2   | 2      |10:00        | 12:00        |  0      | 1         | S501-3 | Marcio Oikawa     |
+| 4      | palestra  | pel  | 0     | 2015| 2            | 4   | 1      |10:00        | 12:00        |  1      | 1         | S402-2 | John "Maddog" Hal |
 
 
 
