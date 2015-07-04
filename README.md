@@ -86,42 +86,38 @@ Campus - Tipo - Nome Turma - Turno (Professor) - Sala
   (codigo,nome);
   ```
 
-- [3.3](#3.3) <a name='3.3'></a> **turmas**: Relaciona todas as disciplinas ofertáveis pela universidade.
-  + `id` - Primary Key, número único para identificação da disciplina (definido arbitrariamente).
-  + `codigo` - Código de identificação da disciplina usado pela prograd.
-  + `nome` - Nome completo da disciplina.
-  + `apelido` - Abreviação ou nome comumente usado pelos alunos para se referir à disciplina (Ex. FenMec, para Fenômenos Mecânicos).
-  + `departamento` - Departamento responsável por ofertar a disciplina.
-  + `coordenador` - Coordenador da disciplina.
-  + `pagina_ufabchelp` - URL correspondente da disciplina no sistema UFABCHelp.
-  + `t` - Quantidade de horas para teoria.
-  + `p` - Quantidade de horas para prática.
-  + `i` - Quantidade de horas para estudo individual.
+- [3.3](#3.3) <a name='3.3'></a> **turmas**: Relaciona todas formadas, por ano/quadrimestre.
+  + `id` - Primary Key, número único para identificação da turma (definido arbitrariamente).
+  + `id_disciplina` - Foreign Key (disciplinas) número de identificação da disciplina.
+	+ `turma` - Letra+Número definido pela PROGRAD para diferenciar as turmas.
+  + `periodo` - Período no qual a maioria das aulas serão realizadas.
+  + `campus` - Unidade onde essa turma terá aulas.
+  + `ano` - Ano em que essa matricula será cursada.
+  + `quadrimestre` - Quadrimestre em que essa matricula será cursada.
 
 
-  | id | codigo  | nome           | apelido | departamento | coordenador | pagina_ufabchelp | t | p | i |
-  |----|:--------|:---------------|---------|:------------ |:------------|:-----------------|---|---|---|
-  | 1  | mc3310  | Banco de Dados | BD      | CMCC         | ZZZ AAA     | asdad            | 3 | 3 | 3 |
+  | id | id_disciplina | turma | periodo  | campus | ano  | quadrimestre |
+  |---:|:--------------|:----- |:---------|:-------|:-----|--------------|
+  | 1  | 2014          | A     | Matutino | SA     | 2015 | 2            |
 
   ```SQL
-  CREATE TABLE `disciplina` (
+  CREATE TABLE `turmas` (
   	id MEDIUMINT NOT NULL AUTO_INCREMENT,
-  	codigo varchar(10)NOT NULL,
-  	nome varchar(100)NOT NULL,
-  	abreviatura varchar(10),
-  	departamento varchar(20),
-  	coordenador varchar(50),
+    ano int(4) NOT NUll,
+    quadrimestre int(1)NOT NULL,
+  	campus int(1)NOT NULL,
+    id_disciplina int(4),
+    turma varchar(5) NOT NULL,
+    periodo varchar(20) NOT NULL,
   	primary key (id)
   );
 
-  LOAD DATA LOCAL INFILE '/Users/v/Desktop/materias_ordenadas.csv'
-  INTO TABLE disciplina
+  LOAD DATA LOCAL INFILE '/Users/v/Desktop/turmas.csv'
+  INTO TABLE turmas
   FIELDS TERMINATED BY ','
-  ENCLOSED by '"'
   LINES TERMINATED BY '\n'
-  (codigo,nome);
+  (ano,quadrimestre,campus,codigo_disciplina,turma,periodo);
   ```
-
 
 
 - [3.4](#3.4) <a name='3.4'></a> **matriculas**: Relaciona as matrículas por ano-quadrimestre.
@@ -146,29 +142,7 @@ Campus - Tipo - Nome Turma - Turno (Professor) - Sala
 
 
 
-###turma:
-| **id** | ano  | quadrimestre | campus | id_disciplina | turma | periodo |
-|-------:|:-----|:------------ |:------ |:--------------|:------|---------|
-| 1      | 2014 | 2            | SA     |  mc3310       | A1    | Mat     |
 
-```SQL
-CREATE TABLE `turmas` (
-	id MEDIUMINT NOT NULL AUTO_INCREMENT,
-  ano int(4) NOT NUll,
-  quadrimestre int(1)NOT NULL,
-	campus int(1)NOT NULL,
-  id_disciplina int(4),
-  turma varchar(5) NOT NULL,
-  periodo varchar(20) NOT NULL,
-	primary key (id)
-);
-
-LOAD DATA LOCAL INFILE '/Users/v/Desktop/turmas.csv'
-INTO TABLE turmas
-FIELDS TERMINATED BY ','
-LINES TERMINATED BY '\n'
-(ano,quadrimestre,campus,codigo_disciplina,turma,periodo);
-```
 
 ###evento:
 | **id** | categoria | tipo | turma | ano  | quadrimestre | dia | semana | hora_inicio | hora_termino | all_day | repeticao | campus | local  | responsavel       |
