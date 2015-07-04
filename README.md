@@ -19,6 +19,19 @@ SA - TEO - Banco de Dados A - Mat (Márcio Katsumi Oikawa) - S301-3
 |:---------|:------------|:-----------|:-------------|:-------------|
 | 11111111 | A Sobrenome | a.sobrn    | 0            | 2014         |
 
+```SQL
+CREATE TABLE `aluno` (
+	ra INT(8) NOT NULL,
+	nome VARCHAR(100) NOT NULL,
+	username VARCHAR(50),
+	email_valido boolean default false,
+	ano_ingresso INT(4),
+    primary key (ra)
+
+```
+
+
+
 
 ###Matrículas:
 | **RA** | id_turma |
