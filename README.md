@@ -28,6 +28,7 @@ Campus - Tipo - Nome Turma - Turno (Professor) - Sala
 	+ `username` - Parte que vem antes do email @aluno.ufabc.edu.br, mesmo login do Tidia.
 	+ `email_valido` - Flag booleana para armazenar a validação por email
 	+ `ano_ingresso` - Ano de ingresso
+
 	| RA       | nome        | username   | email_valido | ano_ingresso |
 	|:---------|:------------|:-----------|:-------------|:-------------|
 	| 11111111 | A Sobrenome | a.sobrn    | 0            | 2014         |
@@ -48,7 +49,7 @@ Campus - Tipo - Nome Turma - Turno (Professor) - Sala
 	LINES TERMINATED BY '\n'
 	IGNORE 1 ROWS;
 	```
-	
+
 - [3.2](#3.2) <a name='3.2'></a> **disciplinas**: Relaciona todas as disciplinas ofertáveis pela universidade.
   + `id` - Primary Key, número único para identificação da disciplina (definido arbitrariamente)
   + `codigo` - Código de identificação da disciplina usado pela prograd
@@ -60,6 +61,7 @@ Campus - Tipo - Nome Turma - Turno (Professor) - Sala
   + `t` - Horas de teoria
   + `p` - Horas de prática
   + `i` - Horas de estudo individual
+
 	| **id** | codigo  | nome           | apelido | departamento | coordenador | pagina_ufabchelp | t | p | i |
 	|--------|:--------|:---------------|---------|:------------ |:------------|:-----------------|---|---|---|
 	| 1      | mc3310  | Banco de Dados | BD      | CMCC         | ZZZ AAA     | asdad            | 3 | 3 | 3 |
