@@ -66,7 +66,7 @@ responsavel |asd
 
 ####Código para geração
 ```
-CREATE 
+CREATE
 ```
 
 
