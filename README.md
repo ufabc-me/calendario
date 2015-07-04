@@ -44,9 +44,9 @@ IGNORE 1 ROWS;
 |11100111| 1        |
 
 ###disciplina:
-| id | codigo  | nome           | abreviatura | t | p | i | departamento | coordenador |
-|----|:--------|:---------------|-------------|---|---|---|:------------ |:------------|
-| 1  | mc3310  | Banco de Dados | BD          | 3 | 3 | 3 | CMCC         | ZZZ AAA     |
+| **id** | codigo  | nome           | abreviatura | t | p | i | departamento | coordenador |
+|--------|:--------|:---------------|-------------|---|---|---|:------------ |:------------|
+| 1      | mc3310  | Banco de Dados | BD          | 3 | 3 | 3 | CMCC         | ZZZ AAA     |
 
 ```SQL
 CREATE TABLE `disciplina` (
@@ -68,9 +68,9 @@ LINES TERMINATED BY '\n'
 ```
 
 ###turma:
-| id | ano  | quadrimestre | campus | id_disciplina | turma | periodo |
-|---:|:-----|:------------ |:------ |:--------------|:------|---------|
-| 1  | 2014 | 2            | SA     |  mc3310       | A1    | Mat     |
+| **id** | ano  | quadrimestre | campus | id_disciplina | turma | periodo |
+|-------:|:-----|:------------ |:------ |:--------------|:------|---------|
+| 1      | 2014 | 2            | SA     |  mc3310       | A1    | Mat     |
 
 ```SQL
 CREATE TABLE `turmas` (
