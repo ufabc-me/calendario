@@ -5,14 +5,14 @@
 Disponível em [https://calendario.ufabc.me](https://calendario.ufabc.me)
 
 ##Índice
- 1. [Introdução](#1-introdução)
- 1. [Objetivo](#2-objetivo)
- 1. [Tabelas](#3-tabelas)
- 1. [Stored Procedures](#4-stored-procedures)
- 1. [Dados da Prograd](#5-dados-da-prograd)
- 1. [Servidor](#6-servidor)
- 1. [Outros](#7-outros)
- 1. [Referências](#8-referências)
+ 1. [Introdução](#1.Introdução)
+ 1. [Objetivo](#2.Objetivo)
+ 1. [Tabelas](#3.Tabelas)
+ 1. [Stored Procedures](#4.Stored-Procedures)
+ 1. [Dados da Prograd](#5.Dados-da-PROGRAD)
+ 1. [Servidor](#6.Servidor)
+ 1. [Outros](#7.Outros)
+ 1. [Referências](#8.Referências)
 
 
 
@@ -23,11 +23,11 @@ SA - TEO - Banco de Dados A - Mat (Márcio Katsumi Oikawa) - S301-3
 Campus - Tipo - Nome Turma - Turno (Professor) - Sala
 ```
 
-##1-Introdução
+##1.Introdução
 
-##2-Objetivo
+##2.Objetivo
 
-##3-Tabelas
+##3.Tabelas
 - [3.1](#3.1) <a name='3.1'></a> **alunos**: Onde serão armazenadas as informações únicas de cada aluno.
 	+ `ra` - Primary Key, número de matrícula do aluno.
 	+ `nome` - Nome completo (tão completo quanto estiver na lista da prograd - não contém caracteres especiais).
@@ -154,10 +154,10 @@ Campus - Tipo - Nome Turma - Turno (Professor) - Sala
   repetição (em semanas) = 0:não repete, 1: repete toda semana
   ```
 
-###4-Stored Procedures
+###4.Stored Procedures
 
 
-###5-Dados da Prograd
+###5.Dados da Prograd
 * 2015
   * 2015.2
     * Alunos Ingressantes - Campus SA [[PDF](original_data/2015.2/turmas_ingressantes_sa_2015.2.pdf)] [[CSV](original_data/2015.2/turmas_ingressantes_sa_2015.2.csv)]
@@ -171,10 +171,10 @@ Campus - Tipo - Nome Turma - Turno (Professor) - Sala
     * ???
 
 
-###8-Servidor
+###8.Servidor
 
 
-###7-Outros
+###7.Outros
 
 * [Anotações](anotacoes.md)
 * [Configuração do Servidor (Ubuntu 14.04 LTS)](configuracao_servidor.md)
@@ -182,7 +182,7 @@ Campus - Tipo - Nome Turma - Turno (Professor) - Sala
 * [Virtualenv](http://www.dabapps.com/blog/introduction-to-pip-and-virtualenv-python/)
 
 
-###8-Referências
+###8.Referências
 * [RFC2445 - iCalendar](https://www.ietf.org/rfc/rfc2445.txt)
 * [Python icalendar library](https://pypi.python.org/pypi/icalendar/3.9.0)
 * [Tabula](http://tabula.technology/) (Tabula is a tool for liberating data tables locked inside PDF files)
