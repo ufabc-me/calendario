@@ -89,7 +89,7 @@ Campus - Tipo - Nome Turma - Turno (Professor) - Sala
 - [3.3](#3.3) <a name='3.3'></a> **turmas**: Relaciona todas formadas, por ano/quadrimestre.
   + `id` - Primary Key, número único para identificação da turma (definido arbitrariamente).
   + `id_disciplina` - Foreign Key (disciplinas) número de identificação da disciplina.
-	+ `turma` - Letra+Número definido pela PROGRAD para diferenciar as turmas.
+  + `turma` - Letra+Número definido pela PROGRAD para diferenciar as turmas.
   + `periodo` - Período no qual a maioria das aulas serão realizadas.
   + `campus` - Unidade onde essa turma terá aulas.
   + `ano` - Ano em que essa matricula será cursada.
@@ -102,21 +102,21 @@ Campus - Tipo - Nome Turma - Turno (Professor) - Sala
 
   ```SQL
   CREATE TABLE `turmas` (
-  	id MEDIUMINT NOT NULL AUTO_INCREMENT,
-    ano int(4) NOT NUll,
-    quadrimestre int(1)NOT NULL,
-  	campus int(1)NOT NULL,
-    id_disciplina int(4),
+  	id INT(500) NOT NULL AUTO_INCREMENT,
+    id_disciplina int(4) NOT NULL,
     turma varchar(5) NOT NULL,
     periodo varchar(20) NOT NULL,
-  	primary key (id)
+    campus INT(1)NOT NULL,
+    ano INT(4) NOT NUll,
+    quadrimestre INT(1)NOT NULL,
+    PRIMARY KEY (id)
   );
 
   LOAD DATA LOCAL INFILE '/Users/v/Desktop/turmas.csv'
   INTO TABLE turmas
   FIELDS TERMINATED BY ','
   LINES TERMINATED BY '\n'
-  (ano,quadrimestre,campus,codigo_disciplina,turma,periodo);
+  (@dummy,id_disciplina,turma,periodo,campus,ano,quadrimestre);
   ```
 
 
