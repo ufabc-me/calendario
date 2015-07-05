@@ -191,7 +191,7 @@ Campus - Tipo - Nome Turma - Turno (Professor) - Sala
 * [Virtualenv](http://www.dabapps.com/blog/introduction-to-pip-and-virtualenv-python/)
 
 
-###8.eferências
+###8.Referências
 * [RFC2445 - iCalendar](https://www.ietf.org/rfc/rfc2445.txt)
 * [Python icalendar library](https://pypi.python.org/pypi/icalendar/3.9.0)
 * [Tabula](http://tabula.technology/) (Tabula is a tool for liberating data tables locked inside PDF files)
