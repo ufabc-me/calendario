@@ -200,9 +200,7 @@ Campus - Tipo - Nome Turma - Turno (Professor) - Sala
   | local            | `YEAR`                                                     | Quadrimestre em que essa matricula será cursada                            | |
   | responsavel      | `YEAR`                                                     | Quadrimestre em que essa matricula será cursada                            | |
 
-
-
-	####Exemplo:
+  ####Exemplo:
 
   | id     | categoria | tipo | turma | ano  | quadrimestre | dia | semana | hora_inicio | hora_termino | all_day | repeticao | campus | local  | responsavel       |
   |--------|-----------|------|:-----:|:----:|:------------:|:---:|:------:|------------:|:-------------|:-------:|:---------:|--------|--------|-------------------|
