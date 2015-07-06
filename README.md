@@ -38,7 +38,7 @@ Campus - Tipo - Nome Turma - Turno (Professor) - Sala
 ```
 
 ##3.Tabelas
-- [3.1](#3.1) <a name='3.1'></a> **alunos**: Onde serão armazenadas as informações únicas de cada aluno.
+- [3.1](#3.1) <a name='3.1'></a> **ALUNOS**: Onde serão armazenadas as informações únicas de cada aluno.
 
   | Nome         | Tipo                                                       | Descrição                                                                |
   |:-------------|:-----------------------------------------------------------|:-------------------------------------------------------------------------|
@@ -56,35 +56,28 @@ Campus - Tipo - Nome Turma - Turno (Professor) - Sala
   ####Código de criação:
   ```SQL
   CREATE TABLE `aluno` (
-    ra INT(8) NOT NULL,
-    nome VARCHAR(100) NOT NULL,
-    username VARCHAR(50),
-    email_valido boolean default false,
-    ano_ingresso INT(4),
-    primary key (ra)
+    ra INT UNSIGNED NOT NULL AUTO INCREMENT PRIMARY KEY,
+    nome VARCHAR(120) NOT NULL,
+    username VARCHAR(30),
+    email_valido BOOLEAN DEFAULT FALSE,
+    ano_ingresso YEAR
   );
-
-  LOAD DATA LOCAL INFILE 'tabelas_tratadas_para_importacao/alunos.csv'
-  INTO TABLE aluno
-  FIELDS TERMINATED BY ','
-  LINES TERMINATED BY '\n'
-  IGNORE 1 ROWS;
   ```
 
-- [3.2](#3.2) <a name='3.2'></a> **disciplinas**: Relaciona todas as disciplinas ofertáveis pela universidade.
+- [3.2](#3.2) <a name='3.2'></a> **DISCIPLINAS**: Relaciona todas as disciplinas ofertáveis pela universidade.
 
   | Nome             | Tipo                                                       | Descrição                                                                       |
   |:-----------------|:-----------------------------------------------------------|:--------------------------------------------------------------------------------|
   | **id**           | `INT` `UNSIGNED` `NOT NULL` `AUTO INCREMENT` `PRIMARY KEY` | **PK** Número único para identificação da disciplina (definido arbitrariamente) |
-  | codigo           | `VARCHAR(120)` `NOT NULL`                                  | Código de identificação da disciplina usado pela PROGRAD                        |
-  | nome             | `VARCHAR(30)`                                              | Nome completo da disciplina                                                     |
-  | apelido          | `BOOLEAN` `DEFAULT FALSE`                                  | Abreviação ou nome comumente usado pelos alunos (FenMec, IEDO, IPE)             |
-  | departamento     | `YEAR`                                                     | Departamento responsável por ofertar a disciplina                               |
-  | coordenador      | `YEAR`                                                     | Coordenador da disciplina                                                       |
-  | pagina_ufabchelp | `YEAR`                                                     | URL correspondente da disciplina no sistema UFABCHelp                           |
-  | t                | `YEAR`                                                     | Quantidade de horas para teoria                                                 |
-  | p                | `YEAR`                                                     | Quantidade de horas para prática                                                |
-  | i                | `YEAR`                                                     | Quantidade de horas para estudo individual                                      |
+  | codigo           | `VARCHAR(10)` `NOT NULL`                                   | Código de identificação da disciplina usado pela PROGRAD                        |
+  | nome             | `VARCHAR(50)` `NOT NULL`                                   | Nome completo da disciplina                                                     |
+  | apelido          | `VARCHAR(10)`                                              | Abreviação ou nome comumente usado pelos alunos (FenMec, IEDO, IPE)             |
+  | departamento     | `VARCHAR(10)`                                              | Departamento responsável por ofertar a disciplina                               |
+  | coordenador      | `VARCHAR(120)`                                             | Coordenador da disciplina                                                       |
+  | pagina_ufabchelp | `VARCHAR(30)`                                              | URL correspondente da disciplina no sistema UFABCHelp                           |
+  | t                | `TINYINT` `UNSIGNED`                                       | Quantidade de horas para teoria                                                 |
+  | p                | `TINYINT` `UNSIGNED`                                       | Quantidade de horas para prática                                                |
+  | i                | `TINYINT` `UNSIGNED`                                       | Quantidade de horas para estudo individual                                      |
 
   ####Exemplo:
   | id | codigo  | nome           | apelido | departamento | coordenador | pagina_ufabchelp | t | p | i |
@@ -95,35 +88,31 @@ Campus - Tipo - Nome Turma - Turno (Professor) - Sala
 
   ```SQL
   CREATE TABLE `disciplina` (
-    id MEDIUMINT NOT NULL AUTO_INCREMENT,
-    codigo varchar(10)NOT NULL,
-    nome varchar(100)NOT NULL,
-    abreviatura varchar(10),
-    departamento varchar(20),
-    coordenador varchar(50),
-    primary key (id)
+    id INT UNSIGNED NOT NULL AUTO INCREMENT PRIMARY KEY,
+    codigo VARCHAR(10) NOT NULL,
+    nome VARCHAR(50) NOT NULL,
+    apelino VARCHAR(10),
+    departamento VARCHAR(10),
+    coordenador VARCHAR(120),
+    pagina_ufabchelp VARCHAR(30),
+    t TINYINT UNSIGNED,
+    p TINYINT UNSIGNED,
+    i TINYINT UNSIGNED,
   );
-
-  LOAD DATA LOCAL INFILE '/Users/v/Desktop/materias_ordenadas.csv'
-  INTO TABLE disciplina
-  FIELDS TERMINATED BY ','
-  ENCLOSED by '"'
-  LINES TERMINATED BY '\n'
-  (codigo,nome);
   ```
 
-- [3.3](#3.3) <a name='3.3'></a> **turmas**: Relaciona todas formadas, por ano/quadrimestre.
+- [3.3](#3.3) <a name='3.3'></a> **TURMAS**: Relaciona todas formadas, por ano/quadrimestre.
 
 
   | Nome             | Tipo                                                       | Descrição                                                                  | Foreign Key |
   |:-----------------|:-----------------------------------------------------------|:---------------------------------------------------------------------------|:------------|
   | **id**           | `INT` `UNSIGNED` `NOT NULL` `AUTO INCREMENT` `PRIMARY KEY` | **PK** Número único para identificação da turma (definido arbitrariamente) | |
-  | *id_disciplina*  | `VARCHAR(120)` `NOT NULL`                                  | Número de identificação da disciplina.                                     | DISCIPLINAS.id |
-  | turma            | `VARCHAR(30)`                                              | Letra+Número usados pela PROGRAD para diferenciar as turmas                | |
-  | periodo          | `BOOLEAN` `DEFAULT FALSE`                                  | Período no qual a maioria das aulas serão realizadas                       | |
-  | *campus*         | `YEAR`                                                     | Unidade onde essa turma terá aulas.                                        | CAMPUS.campus_id     |
-  | ano              | `YEAR`                                                     | Ano em que essa turma terá aulas                                           | |
-  | quadrimestre     | `YEAR`                                                     | Quadrimestre em que essa matricula será cursada                            | |
+  | *id_disciplina*  | `INT` `UNSIGNED` `NOT NULL`                                | Número de identificação da disciplina.                                     | DISCIPLINAS.id   |
+  | turma            | `VARCHAR(5)`                                               | Letra+Número usados pela PROGRAD para diferenciar as turmas                | |
+  | *periodo*        | `INT` `UNSIGNED` `NOT NULL`                                | Período no qual a maioria das aulas serão realizadas                       | PERIODOS.id      |
+  | *campus*         | `INT` `UNSIGNED` `NOT NULL`                                | Unidade onde essa turma terá aulas.                                        | CAMPUS.campus_id |
+  | ano              | `YEAR` `NOT NULL`                                          | Ano em que essa turma terá aulas                                           | |
+  | quadrimestre     | `INT` `UNSIGNED` `NOT NULL`                                | Quadrimestre em que essa matricula será cursada                            | |
 
   ####Exemplo:
   | id | id_disciplina | turma | periodo  | campus | ano  | quadrimestre |
@@ -134,31 +123,24 @@ Campus - Tipo - Nome Turma - Turno (Professor) - Sala
 
   ```SQL
   CREATE TABLE `turmas` (
-    id INT(500) NOT NULL AUTO_INCREMENT,
-    id_disciplina int(4) NOT NULL,
-    turma varchar(5) NOT NULL,
-    periodo varchar(20) NOT NULL,
-    campus INT(1)NOT NULL,
-    ano INT(4) NOT NUll,
-    quadrimestre INT(1)NOT NULL,
-    PRIMARY KEY (id)
+    id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    id_disciplina INT UNSIGNED NOT NULL,
+    turma VARCHAR(5) NOT NULL,
+    periodo INT UNSIGNED NOT NULL,
+    campus INT UNSIGNED NOT NULL,
+    ano YEAR NOT NULL,
+    quadrimestre INT UNSIGNED NOT NULL,
   );
-
-  LOAD DATA LOCAL INFILE '/Users/v/Desktop/turmas.csv'
-  INTO TABLE turmas
-  FIELDS TERMINATED BY ','
-  LINES TERMINATED BY '\n'
-  (@dummy,id_disciplina,turma,periodo,campus,ano,quadrimestre);
   ```
 
-- [3.4](#3.4) <a name='3.4'></a> **matriculas**: Relaciona as matrículas por ano-quadrimestre.
+- [3.4](#3.4) <a name='3.4'></a> **MATRICULAS**: Relaciona as matrículas por ano-quadrimestre.
 
   | Nome             | Tipo                                                       | Descrição                                                                  | Foreign Key |
   |:-----------------|:-----------------------------------------------------------|:---------------------------------------------------------------------------|:------------|
   | *ra*             | `INT` `UNSIGNED` `NOT NULL` `AUTO INCREMENT` `PRIMARY KEY` | Número de matrícula do aluno (definido pela PROGRAD)                       | ALUNOS.ra   |
-  | *id_turma*       | `VARCHAR(120)` `NOT NULL`                                  | Número único para identificação da turma (definido arbitrariamente)        | TURMAS.id   |
-  | ano              | `VARCHAR(30)`                                              | Ano em que essa matricula será cursada                                     | |
-  | quadrimestre     | `YEAR`                                                     | Quadrimestre em que essa matricula será cursada                            | |
+  | *id_turma*       | `INT` `UNSIGNED` `NOT NULL`                                | Número único para identificação da turma (definido arbitrariamente)        | TURMAS.id   |
+  | ano              | `YEAR` `NOT NULL`                                          | Ano em que essa matricula será cursada                                     | |
+  | quadrimestre     | `INT` `UNSIGNED` `NOT NULL`                                | Quadrimestre em que essa matricula será cursada                            | |
 
   ####Exemplo:
   | ra       | id_turma | ano  | quadrimestre |
@@ -168,10 +150,15 @@ Campus - Tipo - Nome Turma - Turno (Professor) - Sala
   ####Código de criação:
 
   ```SQL
-  Codiguinho SQL para criação
+  CREATE TABLE `matriculas` (
+    ra INT UNSIGNED NOT NULL AUTO_INCREMENT,
+    id_turmas INT UNSIGNED NOT NULL,
+    ano YEAR NOT NULL,
+    quadrimestre INT UNSIGNED NOT NULL,
+  );
   ```
 
-- [3.5](#3.5) <a name='3.5'></a> **evento**: Onde serão armazenadas as informações únicas de cada aluno.
+- [3.5](#3.5) <a name='3.5'></a> **EVENTOS**: Onde serão armazenadas as informações únicas de cada aluno.
 
   | Nome                | Tipo                                                       | Descrição                                                                  | Foreign Key |
   |:--------------------|:-----------------------------------------------------------|:---------------------------------------------------------------------------|:------------|
@@ -201,8 +188,6 @@ Campus - Tipo - Nome Turma - Turno (Professor) - Sala
   | id     | categoria | tipo | turma | ano  | quadrimestre | dia | semana | hora_inicio | hora_termino | all_day | repeticao | campus | local  | responsavel       |
   |--------|-----------|------|:-----:|:----:|:------------:|:---:|:------:|------------:|:-------------|:-------:|:---------:|--------|--------|-------------------|
   | 0      | aula      | Prat | 1     | 2015 |      2       |  1  |   1    |10:00        | 12:00        |  0      | 1         | SA     | S302-2 | Marcio Oikawa     |
-  | 2      | aula      | TEO  | 1     | 2015 |      2       |  2  |   2    |10:00        | 12:00        |  0      | 1         | SA     | S501-3 | Marcio Oikawa     |
-  | 4      | palestra  | pel  | 0     | 2015 |      2       |  4  |   1    |10:00        | 12:00        |  1      | 1         | SBC    | S402-2 | John "Maddog" Hal |
 
   ####Código de criação:
 
@@ -211,54 +196,6 @@ Campus - Tipo - Nome Turma - Turno (Professor) - Sala
   semana = 0:par;1:ímpar
   repetição (em semanas) = 0:não repete, 1: repete toda semana
   ```
-
-
-- [3.5](#3.5) <a name='3.5'></a> **evento**: Onde serão armazenadas as informações únicas de cada aluno.
-
-  | Nome                | Tipo                                                       | Descrição                                                                  | Foreign Key |
-  |:--------------------|:-----------------------------------------------------------|:---------------------------------------------------------------------------|:------------|
-  | **id**              | `INT` `UNSIGNED` `NOT NULL` `AUTO INCREMENT` `PRIMARY KEY` | **PK** Número único para identificação da turma (definido arbitrariamente) | |
-  | nome                | `VARCHAR`                                                  | Nome do evento (como aparecerá no calendário)                              | |
-  | descricao           | `VARCHAR`                                                  | Descricao do evento (como aparecerá no calendário)                         | |
-  | local               | `YEAR`                                                     | Localização de onde o evento ocorrerá (Maps usa para alarme)               | |
-  | *categoria*         | `VARCHAR(120)` `NOT NULL`                                  | Número de identificação da disciplina.                                     | DISCIPLINAS.id |
-  | *tipo*              | `VARCHAR(30)`                                              | Tipo de aula (teoria, prática)                                             | .tipo          |
-  | *campus*            | `YEAR`                                                     | Campus onde essa disciplina será lecionada                                 | CAMPUS.id |
-  | turma               | `YEAR`                                                     | Quadrimestre em que essa matricula será cursada                            |  |
-  | ano                 | `YEAR`                                                     | Ano em que esse evento será realizado                                      | |
-  | quadrimestre        | `YEAR`                                                     | Quadrimestre em que esse evento será realizado                             | |
-  | dia                 | `YEAR`                                                     | Dia da semana em que esse evento será realizado                            | |
-  | semana              | `YEAR`                                                     | Paridade da semana em que esse evento será realizado                       | |
-  | repeticao           | `YEAR`                                                     | Flag para indicar se o evento terá repetição                               | |
-  | repeticao_intervalo | `YEAR`                                                     | Indica a cada quantos dias deve ser a repetiçao                            | |
-  | all_day             | `YEAR`                                                     | Flag para indicar que o evendo dura o dia inteiro                          | |
-  | dia_inicio          | `YEAR`                                                     | Dia em que o evento iniciará                                               | |
-  | hora_inicio         | `DATETIME`                                                 | Hora em que esse evento iniciará                                           | |
-  | hora_termino        | `YEAR`                                                     | Hora em que esse evento termina                                            | |
-  | dia_termino         | `YEAR`                                                     | Caso tenha repetição, dia em que esse evento termina                       | |
-  | responsavel         | `YEAR`                                                     | Quadrimestre em que essa matricula será cursada                            | |
-
-  ####Exemplo:
-
-  | id     | categoria | tipo | turma | ano  | quadrimestre | dia | semana | hora_inicio | hora_termino | all_day | repeticao | campus | local  | responsavel       |
-  |--------|-----------|------|:-----:|:----:|:------------:|:---:|:------:|------------:|:-------------|:-------:|:---------:|--------|--------|-------------------|
-  | 0      | aula      | Prat | 1     | 2015 |      2       |  1  |   1    |10:00        | 12:00        |  0      | 1         | SA     | S302-2 | Marcio Oikawa     |
-  | 2      | aula      | TEO  | 1     | 2015 |      2       |  2  |   2    |10:00        | 12:00        |  0      | 1         | SA     | S501-3 | Marcio Oikawa     |
-  | 4      | palestra  | pel  | 0     | 2015 |      2       |  4  |   1    |10:00        | 12:00        |  1      | 1         | SBC    | S402-2 | John "Maddog" Hal |
-
-  ####Código de criação:
-
-  ```
-  dia = 0-7, dia da semana.
-  semana = 0:par;1:ímpar
-  repetição (em semanas) = 0:não repete, 1: repete toda semana
-  ```
-
-
-
-
-
-
 
 ###4.Stored Procedures
 
@@ -313,14 +250,14 @@ Campus - Tipo - Nome Turma - Turno (Professor) - Sala
 
 ```SQL
 create table student(
-    -> first_name varchar(30) NOT NULL,
-    -> last_name varchar(30) not null,
-    -> email varchar(60) null,
-    -> street varchar(50) not null,
-    -> city varchar(40) not null,
+    -> first_name VARCHAR(30) NOT NULL,
+    -> last_name VARCHAR(30) not null,
+    -> email VARCHAR(60) null,
+    -> street VARCHAR(50) not null,
+    -> city VARCHAR(40) not null,
     -> state char(2) not null default "PA",
     -> zip mediumint unsigned not null,
-    -> phone varchar(20) not null,
+    -> phone VARCHAR(20) not null,
     -> birth_date DATE not null,
     -> sex enum('M','F') NOT null,
     -> date_entered timestamp,
@@ -329,7 +266,7 @@ create table student(
 
 
     create table class(
-        -> name varchar(30) not null,
+        -> name VARCHAR(30) not null,
         -> class_id int unsigned not null auto_increment primary key);
 
       create table test(
