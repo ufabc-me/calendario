@@ -212,6 +212,54 @@ Campus - Tipo - Nome Turma - Turno (Professor) - Sala
   repetição (em semanas) = 0:não repete, 1: repete toda semana
   ```
 
+
+- [3.5](#3.5) <a name='3.5'></a> **evento**: Onde serão armazenadas as informações únicas de cada aluno.
+
+  | Nome                | Tipo                                                       | Descrição                                                                  | Foreign Key |
+  |:--------------------|:-----------------------------------------------------------|:---------------------------------------------------------------------------|:------------|
+  | **id**              | `INT` `UNSIGNED` `NOT NULL` `AUTO INCREMENT` `PRIMARY KEY` | **PK** Número único para identificação da turma (definido arbitrariamente) | |
+  | nome                | `VARCHAR`                                                  | Nome do evento (como aparecerá no calendário)                              | |
+  | descricao           | `VARCHAR`                                                  | Descricao do evento (como aparecerá no calendário)                         | |
+  | local               | `YEAR`                                                     | Localização de onde o evento ocorrerá (Maps usa para alarme)               | |
+  | *categoria*         | `VARCHAR(120)` `NOT NULL`                                  | Número de identificação da disciplina.                                     | DISCIPLINAS.id |
+  | *tipo*              | `VARCHAR(30)`                                              | Tipo de aula (teoria, prática)                                             | .tipo          |
+  | *campus*            | `YEAR`                                                     | Campus onde essa disciplina será lecionada                                 | CAMPUS.id |
+  | turma               | `YEAR`                                                     | Quadrimestre em que essa matricula será cursada                            |  |
+  | ano                 | `YEAR`                                                     | Ano em que esse evento será realizado                                      | |
+  | quadrimestre        | `YEAR`                                                     | Quadrimestre em que esse evento será realizado                             | |
+  | dia                 | `YEAR`                                                     | Dia da semana em que esse evento será realizado                            | |
+  | semana              | `YEAR`                                                     | Paridade da semana em que esse evento será realizado                       | |
+  | repeticao           | `YEAR`                                                     | Flag para indicar se o evento terá repetição                               | |
+  | repeticao_intervalo | `YEAR`                                                     | Indica a cada quantos dias deve ser a repetiçao                            | |
+  | all_day             | `YEAR`                                                     | Flag para indicar que o evendo dura o dia inteiro                          | |
+  | dia_inicio          | `YEAR`                                                     | Dia em que o evento iniciará                                               | |
+  | hora_inicio         | `DATETIME`                                                 | Hora em que esse evento iniciará                                           | |
+  | hora_termino        | `YEAR`                                                     | Hora em que esse evento termina                                            | |
+  | dia_termino         | `YEAR`                                                     | Caso tenha repetição, dia em que esse evento termina                       | |
+  | responsavel         | `YEAR`                                                     | Quadrimestre em que essa matricula será cursada                            | |
+
+  ####Exemplo:
+
+  | id     | categoria | tipo | turma | ano  | quadrimestre | dia | semana | hora_inicio | hora_termino | all_day | repeticao | campus | local  | responsavel       |
+  |--------|-----------|------|:-----:|:----:|:------------:|:---:|:------:|------------:|:-------------|:-------:|:---------:|--------|--------|-------------------|
+  | 0      | aula      | Prat | 1     | 2015 |      2       |  1  |   1    |10:00        | 12:00        |  0      | 1         | SA     | S302-2 | Marcio Oikawa     |
+  | 2      | aula      | TEO  | 1     | 2015 |      2       |  2  |   2    |10:00        | 12:00        |  0      | 1         | SA     | S501-3 | Marcio Oikawa     |
+  | 4      | palestra  | pel  | 0     | 2015 |      2       |  4  |   1    |10:00        | 12:00        |  1      | 1         | SBC    | S402-2 | John "Maddog" Hal |
+
+  ####Código de criação:
+
+  ```
+  dia = 0-7, dia da semana.
+  semana = 0:par;1:ímpar
+  repetição (em semanas) = 0:não repete, 1: repete toda semana
+  ```
+
+
+
+
+
+
+
 ###4.Stored Procedures
 
 
