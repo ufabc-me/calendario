@@ -39,6 +39,15 @@ Campus - Tipo - Nome Turma - Turno (Professor) - Sala
 
 ##3.Tabelas
 - [3.1](#3.1) <a name='3.1'></a> **alunos**: Onde serão armazenadas as informações únicas de cada aluno.
+
+	| nome         | tipo                                          | descrição                                                                                         | 
+	|--------------|-----------------------------------------------|---------------------------------------------------------------------------------------------------|
+	| **RA**       | `INT` `UNSIGNED` `NOT NULL` `AUTO INCREMENT`  | **PK** Número de matrícula do aluno (definido pela PROGRAD)                                       |
+	| nome         | `VARCHAR(120)` `NOT NULL`                     | Nome completo (tão completo quanto estiver na lista da prograd - não contém caracteres especiais) |
+	| username     | `VARCHAR(120)`                                | Parte que vem antes do email `@aluno.ufabc.edu.br`, mesmo login do Tidia                          |
+	| email_valido | `BOOLEAN` `DEFAULT FALSE`                     | Flag booleana para armazenar a validação por email                                                |
+	| ano_ingresso | `YEAR`                                        | Ano de ingresso                                                                                   |
+
 	+ `ra` - Primary Key, número de matrícula do aluno.
 	+ `nome` - Nome completo (tão completo quanto estiver na lista da prograd - não contém caracteres especiais).
 	+ `username` - Parte que vem antes do email @aluno.ufabc.edu.br, mesmo login do Tidia.
@@ -198,6 +207,22 @@ Campus - Tipo - Nome Turma - Turno (Professor) - Sala
 * [Tabula](http://tabula.technology/) (Tabula is a tool for liberating data tables locked inside PDF files)
 
 ###9.Anotações
+[Int Types](https://dev.mysql.com/doc/refman/5.1/en/integer-types.html)
+**lembrar que unsigned armazena o dobro**
+ + `TINYINT`:[1 byte] 127 até -128
+ + `SMALLINT`:[2 bytes] 32.768 até -32.767
+ + `MEDIUMINT`:[3 bytes] 8.388.608 até -8.388.607
+ + `INT`:[4 bytes] 2.147.483.648 até -2.147.483.647
+ + `BIGINT`:[8 bytes] 9.223.372.036.854.775.808 até -9.223.372.036.854.775.807
+
+
+ + `ENUM`: Número limitado de strings possíveis
+[DATE Types](https://dev.mysql.com/doc/refman/5.0/en/datetime.html)
+ + `DATE`: YYYY-MM-DD
+ + `TIME`: HH-MM-SS
+ + `DATETIME`: YYYY-MM-DD HH-MM-SS
+ + `TIMESTAMP`: YYYYMMDDHHMMSS
+ + `YEAR`: YYYY
 
 ```SQL
 create table student(
@@ -214,6 +239,29 @@ create table student(
     -> date_entered timestamp,
     -> lunch_cost FLOAT null,
     -> student_id int unsigned not null auto_increment primary key);
+
+
+    create table class(
+        -> name varchar(30) not null,
+        -> class_id int unsigned not null auto_increment primary key);
+
+      create table test(
+          -> date DATE not null,
+          -> type enum('t','q') not null,
+          -> class_id INT unsigned not null,
+          -> test_id INT UNSIGNED NOT Null auto_increment Primary Key);
+
+      create table score (
+          -> student_id INT unsigned not null,
+          -> event_id int unsigned NOT NULL,
+          -> score INT not null,
+          -> PRIMARY KEY(event_id,student_id));
+
+      create table absence(
+          -> student_id int unsigned not null,
+          -> date date not null,
+          -> primary key(student_id, date));
+
 ```
 
 
