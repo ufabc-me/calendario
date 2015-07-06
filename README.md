@@ -173,25 +173,28 @@ Campus - Tipo - Nome Turma - Turno (Professor) - Sala
 
 - [3.5](#3.5) <a name='3.5'></a> **evento**: Onde serão armazenadas as informações únicas de cada aluno.
 
-  | Nome             | Tipo                                                       | Descrição                                                                  | Foreign Key |
-  |:-----------------|:-----------------------------------------------------------|:---------------------------------------------------------------------------|:------------|
-  | **id**           | `INT` `UNSIGNED` `NOT NULL` `AUTO INCREMENT` `PRIMARY KEY` | **PK** Número único para identificação da turma (definido arbitrariamente) | |
-  | *categoria*      | `VARCHAR(120)` `NOT NULL`                                  | Número de identificação da disciplina.                                     | DISCIPLINAS.id |
-  | *tipo*           | `VARCHAR(30)`                                              | Tipo de aula (teoria, prática)                                             | .tipo          |
-  | turma            | `YEAR`                                                     | Quadrimestre em que essa matricula será cursada                            |  |
-  | ano              | `YEAR`                                                     | Quadrimestre em que essa matricula será cursada                            | |
-  | quadrimestre     | `YEAR`                                                     | Quadrimestre em que essa matricula será cursada                            | |
-  | dia              | `YEAR`                                                     | Quadrimestre em que essa matricula será cursada                            | |
-  | semana           | `YEAR`                                                     | Quadrimestre em que essa matricula será cursada                            | |
-  | hora_inicio      | `YEAR`                                                     | Quadrimestre em que essa matricula será cursada                            | |
-  | hora_termino     | `YEAR`                                                     | Quadrimestre em que essa matricula será cursada                            | |
-  | dia_inicio       | `YEAR`                                                     | Quadrimestre em que essa matricula será cursada                            | |
-  | dia_termino      | `YEAR`                                                     | Quadrimestre em que essa matricula será cursada                            | |
-  | all_day          | `YEAR`                                                     | Quadrimestre em que essa matricula será cursada                            | |
-  | repeticao        | `YEAR`                                                     | Quadrimestre em que essa matricula será cursada                            | |
-  | *campus*         | `YEAR`                                                     | Quadrimestre em que essa matricula será cursada                            | CAMPUS.id |
-  | local            | `YEAR`                                                     | Quadrimestre em que essa matricula será cursada                            | |
-  | responsavel      | `YEAR`                                                     | Quadrimestre em que essa matricula será cursada                            | |
+  | Nome                | Tipo                                                       | Descrição                                                                  | Foreign Key |
+  |:--------------------|:-----------------------------------------------------------|:---------------------------------------------------------------------------|:------------|
+  | **id**              | `INT` `UNSIGNED` `NOT NULL` `AUTO INCREMENT` `PRIMARY KEY` | **PK** Número único para identificação da turma (definido arbitrariamente) | |
+  | nome                | `VARCHAR`                                                  | Nome do evento (como aparecerá no calendário)                              | |
+  | descricao           | `VARCHAR`                                                  | Descricao do evento (como aparecerá no calendário)                         | |
+  | local               | `YEAR`                                                     | Localização de onde o evento ocorrerá (Maps usa para alarme)               | |
+  | *categoria*         | `VARCHAR(120)` `NOT NULL`                                  | Número de identificação da disciplina.                                     | DISCIPLINAS.id |
+  | *tipo*              | `VARCHAR(30)`                                              | Tipo de aula (teoria, prática)                                             | .tipo          |
+  | *campus*            | `YEAR`                                                     | Campus onde essa disciplina será lecionada                                 | CAMPUS.id |
+  | turma               | `YEAR`                                                     | Quadrimestre em que essa matricula será cursada                            |  |
+  | ano                 | `YEAR`                                                     | Ano em que esse evento será realizado                                      | |
+  | quadrimestre        | `YEAR`                                                     | Quadrimestre em que esse evento será realizado                             | |
+  | dia                 | `YEAR`                                                     | Dia da semana em que esse evento será realizado                            | |
+  | semana              | `YEAR`                                                     | Paridade da semana em que esse evento será realizado                       | |
+  | repeticao           | `YEAR`                                                     | Flag para indicar se o evento terá repetição                               | |
+  | repeticao_intervalo | `YEAR`                                                     | Indica a cada quantos dias deve ser a repetiçao                            | |
+  | all_day             | `YEAR`                                                     | Flag para indicar que o evendo dura o dia inteiro                          | |
+  | repeticao           | `YEAR`                                                     | Flag para indicar se o evento terá repetição                               | |
+  | dia_hora_inicio     | `DATETIME`                                                 | Dia-Hora em que esse evento iniciará                                       | |
+  | hora_termino        | `YEAR`                                                     | Hora em que esse evento termina                                            | |
+  | dia_termino         | `YEAR`                                                     | Caso tenha repetição, dia em que esse evento termina                       | |
+  | responsavel         | `YEAR`                                                     | Quadrimestre em que essa matricula será cursada                            | |
 
   ####Exemplo:
 
