@@ -40,7 +40,7 @@ Campus - Tipo - Nome Turma - Turno (Professor) - Sala
 ##3.Tabelas
 - [3.1](#3.1) <a name='3.1'></a> **alunos**: Onde serão armazenadas as informações únicas de cada aluno.
 
-	| nome         | tipo                                                       | descrição                                                                |
+	| Nome         | Tipo                                                       | Descrição                                                                |
 	|:-------------|:-----------------------------------------------------------|:-------------------------------------------------------------------------|
 	| **ra**       | `INT` `UNSIGNED` `NOT NULL` `AUTO INCREMENT` `PRIMARY KEY` | **PK** Número de matrícula do aluno (definido pela PROGRAD)              |
 	| nome         | `VARCHAR(120)` `NOT NULL`                                  | Nome completo (lista da prograd) - não contém caracteres especiais)      |
@@ -73,7 +73,7 @@ Campus - Tipo - Nome Turma - Turno (Professor) - Sala
 
 - [3.2](#3.2) <a name='3.2'></a> **disciplinas**: Relaciona todas as disciplinas ofertáveis pela universidade.
 
-	| nome             | tipo                                                       | descrição                                                                       |
+	| Nome             | Tipo                                                       | Descrição                                                                       |
 	|:-----------------|:-----------------------------------------------------------|:--------------------------------------------------------------------------------|
 	| **id**           | `INT` `UNSIGNED` `NOT NULL` `AUTO INCREMENT` `PRIMARY KEY` | **PK** Número único para identificação da disciplina (definido arbitrariamente) |
 	| codigo           | `VARCHAR(120)` `NOT NULL`                                  | Código de identificação da disciplina usado pela PROGRAD                        |
@@ -115,7 +115,7 @@ Campus - Tipo - Nome Turma - Turno (Professor) - Sala
 - [3.3](#3.3) <a name='3.3'></a> **turmas**: Relaciona todas formadas, por ano/quadrimestre.
 
 
-	| nome             | tipo                                                       | descrição                                                                  | Foreign Key |
+	| Nome             | Tipo                                                       | Descrição                                                                  | Foreign Key |
 	|:-----------------|:-----------------------------------------------------------|:---------------------------------------------------------------------------|:------------|
 	| **id**           | `INT` `UNSIGNED` `NOT NULL` `AUTO INCREMENT` `PRIMARY KEY` | **PK** Número único para identificação da turma (definido arbitrariamente) | |
 	| id_disciplina    | `VARCHAR(120)` `NOT NULL`                                  | Número de identificação da disciplina.                                     | DISCIPLINAS.id |
@@ -152,18 +152,31 @@ Campus - Tipo - Nome Turma - Turno (Professor) - Sala
   ```
 
 - [3.4](#3.4) <a name='3.4'></a> **matriculas**: Relaciona as matrículas por ano-quadrimestre.
+
+	| Nome             | Tipo                                                       | Descrição                                                                  | Foreign Key |
+	|:-----------------|:-----------------------------------------------------------|:---------------------------------------------------------------------------|:------------|
+	| ra               | `INT` `UNSIGNED` `NOT NULL` `AUTO INCREMENT` `PRIMARY KEY` | **PK** Número único para identificação da turma (definido arbitrariamente) | |
+	| id_turma         | `VARCHAR(120)` `NOT NULL`                                  | Número de identificação da disciplina.                                     | DISCIPLINAS.id |
+	| ano              | `VARCHAR(30)`                                              | Nome completo da disciplina                                                | |
+	| quadrimestre     | `YEAR`                                                     | Quadrimestre em que essa matricula será cursada                            | |
+
+	####Exemplo:
+  | ra       | id_turma | ano  | quadrimestre |
+  |----------|:---------|:-----|--------------|
+  | 11111111 | 2        | 2015 | 2            |
+
+	####Código de criação:
+
+  ```SQL
+  Codiguinho SQL para criação
+  ```
+
+
   + `ra` - Foreign Key (alunos) número de matrícula do aluno.
   + `id_turma` - Foreign Key (turmas) número de identificação da turma.
   + `ano` - Ano em que essa matricula será cursada.
   + `quadrimestre` - Quadrimestre em que essa matricula será cursada.
 
-  | ra       | id_turma | ano  | quadrimestre |
-  |----------|:---------|:-----|--------------|
-  | 11111111 | 2        | 2015 | 2            |
-
-  ```SQL
-  Codiguinho SQL para criação
-  ```
 
 - [3.1](#3.1) <a name='3.1'></a> **evento**: Onde serão armazenadas as informações únicas de cada aluno.
   + `ra` - Primary Key, número de matrícula do aluno.
