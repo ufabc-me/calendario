@@ -40,8 +40,8 @@ Campus - Tipo - Nome Turma - Turno (Professor) - Sala
 ##3.Tabelas
 - [3.1](#3.1) <a name='3.1'></a> **alunos**: Onde serão armazenadas as informações únicas de cada aluno.
 
-	| nome         | tipo                                          | descrição                                                                                         | 
-	|--------------|-----------------------------------------------|---------------------------------------------------------------------------------------------------|
+	| nome         | tipo                                          | descrição                                                                                         |
+	|:-------------|:----------------------------------------------|:--------------------------------------------------------------------------------------------------|
 	| **RA**       | `INT` `UNSIGNED` `NOT NULL` `AUTO INCREMENT`  | **PK** Número de matrícula do aluno (definido pela PROGRAD)                                       |
 	| nome         | `VARCHAR(120)` `NOT NULL`                     | Nome completo (tão completo quanto estiver na lista da prograd - não contém caracteres especiais) |
 	| username     | `VARCHAR(120)`                                | Parte que vem antes do email `@aluno.ufabc.edu.br`, mesmo login do Tidia                          |
