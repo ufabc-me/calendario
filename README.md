@@ -42,12 +42,13 @@ Campus - Tipo - Nome Turma - Turno (Professor) - Sala
 
 	| nome         | tipo                                                       | descrição                                                                |
 	|:-------------|:-----------------------------------------------------------|:-------------------------------------------------------------------------|
-	| **RA**       | `INT` `UNSIGNED` `NOT NULL` `AUTO INCREMENT` `PRIMARY KEY` | **PK** Número de matrícula do aluno (definido pela PROGRAD)              |
+	| **ra**       | `INT` `UNSIGNED` `NOT NULL` `AUTO INCREMENT` `PRIMARY KEY` | **PK** Número de matrícula do aluno (definido pela PROGRAD)              |
 	| nome         | `VARCHAR(120)` `NOT NULL`                                  | Nome completo (lista da prograd) - não contém caracteres especiais)      |
 	| username     | `VARCHAR(30)`                                              | Parte que vem antes do email `@aluno.ufabc.edu.br`, mesmo login do Tidia |
 	| email_valido | `BOOLEAN` `DEFAULT FALSE`                                  | Flag booleana para armazenar a validação por email                       |
 	| ano_ingresso | `YEAR`                                                     | Ano de ingresso                                                          |
 
+	####Exemplo:
 	| ra       | nome     | username | email_valido | ano_ingresso |
 	|:---------|:---------|:---------|:-------------|:-------------|
 	| 11111111 | John Doe | j.doe    | 0            | 2014         |
@@ -71,22 +72,26 @@ Campus - Tipo - Nome Turma - Turno (Professor) - Sala
 	```
 
 - [3.2](#3.2) <a name='3.2'></a> **disciplinas**: Relaciona todas as disciplinas ofertáveis pela universidade.
-  + `id` - Primary Key, número único para identificação da disciplina (definido arbitrariamente).
-  + `codigo` - Código de identificação da disciplina usado pela prograd.
-  + `nome` - Nome completo da disciplina.
-  + `apelido` - Abreviação ou nome comumente usado pelos alunos para se referir à disciplina (Ex. FenMec, para Fenômenos Mecânicos).
-  + `departamento` - Departamento responsável por ofertar a disciplina.
-  + `coordenador` - Coordenador da disciplina.
-  + `pagina_ufabchelp` - URL correspondente da disciplina no sistema UFABCHelp.
-  + `t` - Quantidade de horas para teoria.
-  + `p` - Quantidade de horas para prática.
-  + `i` - Quantidade de horas para estudo individual.
 
+	| nome             | tipo                                                       | descrição                                                                       |
+	|:-----------------|:-----------------------------------------------------------|:--------------------------------------------------------------------------------|
+	| **id**           | `INT` `UNSIGNED` `NOT NULL` `AUTO INCREMENT` `PRIMARY KEY` | **PK** número único para identificação da disciplina (definido arbitrariamente) |
+	| codigo           | `VARCHAR(120)` `NOT NULL`                                  | Código de identificação da disciplina usado pela PROGRAD                        |
+	| nome             | `VARCHAR(30)`                                              | Nome completo da disciplina                                                     |
+	| apelido          | `BOOLEAN` `DEFAULT FALSE`                                  | Abreviação ou nome comumente usado pelos alunos (FenMec, IEDO, IPE)             |
+	| departamento     | `YEAR`                                                     | Departamento responsável por ofertar a disciplina                               |
+	| coordenador      | `YEAR`                                                     | Coordenador da disciplina                                                       |
+	| pagina_ufabchelp | `YEAR`                                                     | URL correspondente da disciplina no sistema UFABCHelp                           |
+	| t                | `YEAR`                                                     | Quantidade de horas para teoria                                                 |
+	| p                | `YEAR`                                                     | Quantidade de horas para prática                                                |
+	| i                | `YEAR`                                                     | Quantidade de horas para estudo individual                                      |
 
+	####Exemplo:
   | id | codigo  | nome           | apelido | departamento | coordenador | pagina_ufabchelp | t | p | i |
   |----|:--------|:---------------|---------|:------------ |:------------|:-----------------|---|---|---|
   | 1  | mc3310  | Banco de Dados | BD      | CMCC         | ZZZ AAA     | asdad            | 3 | 3 | 3 |
 
+	####Código de criação:
   ```SQL
   CREATE TABLE `disciplina` (
   	id MEDIUMINT NOT NULL AUTO_INCREMENT,
