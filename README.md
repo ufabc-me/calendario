@@ -116,7 +116,7 @@ Campus - Tipo - Nome Turma - Turno (Professor) - Sala
 
 
 	| nome             | tipo                                                       | descrição                                                                  | Foreign Key |
-	|:-----------------|:-----------------------------------------------------------|:---------------------------------------------------------------------------|-|
+	|:-----------------|:-----------------------------------------------------------|:---------------------------------------------------------------------------|:------------|
 	| **id**           | `INT` `UNSIGNED` `NOT NULL` `AUTO INCREMENT` `PRIMARY KEY` | **PK** Número único para identificação da turma (definido arbitrariamente) | |
 	| id_disciplina    | `VARCHAR(120)` `NOT NULL`                                  | Número de identificação da disciplina.                                     | DISCIPLINAS.id |
 	| turma            | `VARCHAR(30)`                                              | Nome completo da disciplina                                                | |
