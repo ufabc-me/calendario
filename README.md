@@ -186,11 +186,11 @@ Campus - Tipo - Nome Turma - Turno (Professor) - Sala
 	| *categoria*      | `VARCHAR(120)` `NOT NULL`                                  | Número de identificação da disciplina.                                     | DISCIPLINAS.id |
 	| tipo             | `VARCHAR(30)`                                              | Nome completo da disciplina                                                | |
 	| turma            | `YEAR`                                                     | Quadrimestre em que essa matricula será cursada                            | |
-	| ano              | `YEAR`                                                     | Quadrimestre em que essa matricula será cursada                            | |
+  | ano              | `YEAR`                                                     | Quadrimestre em que essa matricula será cursada                            | |
   | quadrimestre     | `YEAR`                                                     | Quadrimestre em que essa matricula será cursada                            | |
-	| dia              | `YEAR`                                                     | Quadrimestre em que essa matricula será cursada                            | |
+  | dia              | `YEAR`                                                     | Quadrimestre em que essa matricula será cursada                            | |
   | semana           | `YEAR`                                                     | Quadrimestre em que essa matricula será cursada                            | |
-	| hora_inicio      | `YEAR`                                                     | Quadrimestre em que essa matricula será cursada                            | |
+  | hora_inicio      | `YEAR`                                                     | Quadrimestre em que essa matricula será cursada                            | |
   | hora_termino     | `YEAR`                                                     | Quadrimestre em que essa matricula será cursada                            | |
 	| dia_inicio       | `YEAR`                                                     | Quadrimestre em que essa matricula será cursada                            | |
 	| dia_termino      | `YEAR`                                                     | Quadrimestre em que essa matricula será cursada                            | |
