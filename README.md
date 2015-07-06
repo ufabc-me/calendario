@@ -40,68 +40,68 @@ Campus - Tipo - Nome Turma - Turno (Professor) - Sala
 ##3.Tabelas
 - [3.1](#3.1) <a name='3.1'></a> **alunos**: Onde serão armazenadas as informações únicas de cada aluno.
 
-	| Nome         | Tipo                                                       | Descrição                                                                |
-	|:-------------|:-----------------------------------------------------------|:-------------------------------------------------------------------------|
-	| **ra**       | `INT` `UNSIGNED` `NOT NULL` `AUTO INCREMENT` `PRIMARY KEY` | **PK** Número de matrícula do aluno (definido pela PROGRAD)              |
-	| nome         | `VARCHAR(120)` `NOT NULL`                                  | Nome completo (lista da PROGRAD) - não contém caracteres especiais)      |
-	| username     | `VARCHAR(30)`                                              | Parte que vem antes do email `@aluno.ufabc.edu.br`, mesmo login do Tidia |
-	| email_valido | `BOOLEAN` `DEFAULT FALSE`                                  | Flag booleana para armazenar a validação por email                       |
-	| ano_ingresso | `YEAR`                                                     | Ano de ingresso                                                          |
+  | Nome         | Tipo                                                       | Descrição                                                                |
+  |:-------------|:-----------------------------------------------------------|:-------------------------------------------------------------------------|
+  | **ra**       | `INT` `UNSIGNED` `NOT NULL` `AUTO INCREMENT` `PRIMARY KEY` | **PK** Número de matrícula do aluno (definido pela PROGRAD)              |
+  | nome         | `VARCHAR(120)` `NOT NULL`                                  | Nome completo (lista da PROGRAD) - não contém caracteres especiais)      |
+  | username     | `VARCHAR(30)`                                              | Parte que vem antes do email `@aluno.ufabc.edu.br`, mesmo login do Tidia |
+  | email_valido | `BOOLEAN` `DEFAULT FALSE`                                  | Flag booleana para armazenar a validação por email                       |
+  | ano_ingresso | `YEAR`                                                     | Ano de ingresso                                                          |
 
-	####Exemplo:
-	| ra       | nome     | username | email_valido | ano_ingresso |
-	|:---------|:---------|:---------|:-------------|:-------------|
-	| 11111111 | John Doe | j.doe    | 0            | 2014         |
+  ####Exemplo:
+  | ra       | nome     | username | email_valido | ano_ingresso |
+  |:---------|:---------|:---------|:-------------|:-------------|
+  | 11111111 | John Doe | j.doe    | 0            | 2014         |
 
-	####Código de criação:
-	```SQL
-	CREATE TABLE `aluno` (
-		ra INT(8) NOT NULL,
-		nome VARCHAR(100) NOT NULL,
-		username VARCHAR(50),
-		email_valido boolean default false,
-		ano_ingresso INT(4),
-	  primary key (ra)
-	);
+  ####Código de criação:
+  ```SQL
+  CREATE TABLE `aluno` (
+    ra INT(8) NOT NULL,
+    nome VARCHAR(100) NOT NULL,
+    username VARCHAR(50),
+    email_valido boolean default false,
+    ano_ingresso INT(4),
+    primary key (ra)
+  );
 
-	LOAD DATA LOCAL INFILE 'tabelas_tratadas_para_importacao/alunos.csv'
-	INTO TABLE aluno
-	FIELDS TERMINATED BY ','
-	LINES TERMINATED BY '\n'
-	IGNORE 1 ROWS;
-	```
+  LOAD DATA LOCAL INFILE 'tabelas_tratadas_para_importacao/alunos.csv'
+  INTO TABLE aluno
+  FIELDS TERMINATED BY ','
+  LINES TERMINATED BY '\n'
+  IGNORE 1 ROWS;
+  ```
 
 - [3.2](#3.2) <a name='3.2'></a> **disciplinas**: Relaciona todas as disciplinas ofertáveis pela universidade.
 
-	| Nome             | Tipo                                                       | Descrição                                                                       |
-	|:-----------------|:-----------------------------------------------------------|:--------------------------------------------------------------------------------|
-	| **id**           | `INT` `UNSIGNED` `NOT NULL` `AUTO INCREMENT` `PRIMARY KEY` | **PK** Número único para identificação da disciplina (definido arbitrariamente) |
-	| codigo           | `VARCHAR(120)` `NOT NULL`                                  | Código de identificação da disciplina usado pela PROGRAD                        |
-	| nome             | `VARCHAR(30)`                                              | Nome completo da disciplina                                                     |
-	| apelido          | `BOOLEAN` `DEFAULT FALSE`                                  | Abreviação ou nome comumente usado pelos alunos (FenMec, IEDO, IPE)             |
-	| departamento     | `YEAR`                                                     | Departamento responsável por ofertar a disciplina                               |
-	| coordenador      | `YEAR`                                                     | Coordenador da disciplina                                                       |
-	| pagina_ufabchelp | `YEAR`                                                     | URL correspondente da disciplina no sistema UFABCHelp                           |
-	| t                | `YEAR`                                                     | Quantidade de horas para teoria                                                 |
-	| p                | `YEAR`                                                     | Quantidade de horas para prática                                                |
-	| i                | `YEAR`                                                     | Quantidade de horas para estudo individual                                      |
+  | Nome             | Tipo                                                       | Descrição                                                                       |
+  |:-----------------|:-----------------------------------------------------------|:--------------------------------------------------------------------------------|
+  | **id**           | `INT` `UNSIGNED` `NOT NULL` `AUTO INCREMENT` `PRIMARY KEY` | **PK** Número único para identificação da disciplina (definido arbitrariamente) |
+  | codigo           | `VARCHAR(120)` `NOT NULL`                                  | Código de identificação da disciplina usado pela PROGRAD                        |
+  | nome             | `VARCHAR(30)`                                              | Nome completo da disciplina                                                     |
+  | apelido          | `BOOLEAN` `DEFAULT FALSE`                                  | Abreviação ou nome comumente usado pelos alunos (FenMec, IEDO, IPE)             |
+  | departamento     | `YEAR`                                                     | Departamento responsável por ofertar a disciplina                               |
+  | coordenador      | `YEAR`                                                     | Coordenador da disciplina                                                       |
+  | pagina_ufabchelp | `YEAR`                                                     | URL correspondente da disciplina no sistema UFABCHelp                           |
+  | t                | `YEAR`                                                     | Quantidade de horas para teoria                                                 |
+  | p                | `YEAR`                                                     | Quantidade de horas para prática                                                |
+  | i                | `YEAR`                                                     | Quantidade de horas para estudo individual                                      |
 
-	####Exemplo:
+  ####Exemplo:
   | id | codigo  | nome           | apelido | departamento | coordenador | pagina_ufabchelp | t | p | i |
   |----|:--------|:---------------|---------|:------------ |:------------|:-----------------|---|---|---|
   | 1  | mc3310  | Banco de Dados | BD      | CMCC         | ZZZ AAA     | asdad            | 3 | 3 | 3 |
 
-	####Código de criação:
+  ####Código de criação:
 
   ```SQL
   CREATE TABLE `disciplina` (
-  	id MEDIUMINT NOT NULL AUTO_INCREMENT,
-  	codigo varchar(10)NOT NULL,
-  	nome varchar(100)NOT NULL,
-  	abreviatura varchar(10),
-  	departamento varchar(20),
-  	coordenador varchar(50),
-  	primary key (id)
+    id MEDIUMINT NOT NULL AUTO_INCREMENT,
+    codigo varchar(10)NOT NULL,
+    nome varchar(100)NOT NULL,
+    abreviatura varchar(10),
+    departamento varchar(20),
+    coordenador varchar(50),
+    primary key (id)
   );
 
   LOAD DATA LOCAL INFILE '/Users/v/Desktop/materias_ordenadas.csv'
@@ -115,26 +115,26 @@ Campus - Tipo - Nome Turma - Turno (Professor) - Sala
 - [3.3](#3.3) <a name='3.3'></a> **turmas**: Relaciona todas formadas, por ano/quadrimestre.
 
 
-	| Nome             | Tipo                                                       | Descrição                                                                  | Foreign Key |
-	|:-----------------|:-----------------------------------------------------------|:---------------------------------------------------------------------------|:------------|
-	| **id**           | `INT` `UNSIGNED` `NOT NULL` `AUTO INCREMENT` `PRIMARY KEY` | **PK** Número único para identificação da turma (definido arbitrariamente) | |
-	| *id_disciplina*  | `VARCHAR(120)` `NOT NULL`                                  | Número de identificação da disciplina.                                     | DISCIPLINAS.id |
-	| turma            | `VARCHAR(30)`                                              | Letra+Número usados pela PROGRAD para diferenciar as turmas                | |
-	| periodo          | `BOOLEAN` `DEFAULT FALSE`                                  | Período no qual a maioria das aulas serão realizadas                       | |
-	| *campus*         | `YEAR`                                                     | Unidade onde essa turma terá aulas.                                        | .campus_id     |
-	| ano              | `YEAR`                                                     | Ano em que essa matricula será cursada                                     | |
-	| quadrimestre     | `YEAR`                                                     | Quadrimestre em que essa matricula será cursada                            | |
+  | Nome             | Tipo                                                       | Descrição                                                                  | Foreign Key |
+  |:-----------------|:-----------------------------------------------------------|:---------------------------------------------------------------------------|:------------|
+  | **id**           | `INT` `UNSIGNED` `NOT NULL` `AUTO INCREMENT` `PRIMARY KEY` | **PK** Número único para identificação da turma (definido arbitrariamente) | |
+  | *id_disciplina*  | `VARCHAR(120)` `NOT NULL`                                  | Número de identificação da disciplina.                                     | DISCIPLINAS.id |
+  | turma            | `VARCHAR(30)`                                              | Letra+Número usados pela PROGRAD para diferenciar as turmas                | |
+  | periodo          | `BOOLEAN` `DEFAULT FALSE`                                  | Período no qual a maioria das aulas serão realizadas                       | |
+  | *campus*         | `YEAR`                                                     | Unidade onde essa turma terá aulas.                                        | .campus_id     |
+  | ano              | `YEAR`                                                     | Ano em que essa matricula será cursada                                     | |
+  | quadrimestre     | `YEAR`                                                     | Quadrimestre em que essa matricula será cursada                            | |
 
-	####Exemplo:
+  ####Exemplo:
   | id | id_disciplina | turma | periodo  | campus | ano  | quadrimestre |
   |---:|:--------------|:----- |:---------|:-------|:-----|--------------|
   | 1  | 2014          | A     | Matutino | SA     | 2015 | 2            |
 
-	####Código de criação:
+  ####Código de criação:
 
   ```SQL
   CREATE TABLE `turmas` (
-  	id INT(500) NOT NULL AUTO_INCREMENT,
+    id INT(500) NOT NULL AUTO_INCREMENT,
     id_disciplina int(4) NOT NULL,
     turma varchar(5) NOT NULL,
     periodo varchar(20) NOT NULL,
@@ -153,19 +153,19 @@ Campus - Tipo - Nome Turma - Turno (Professor) - Sala
 
 - [3.4](#3.4) <a name='3.4'></a> **matriculas**: Relaciona as matrículas por ano-quadrimestre.
 
-	| Nome             | Tipo                                                       | Descrição                                                                  | Foreign Key |
-	|:-----------------|:-----------------------------------------------------------|:---------------------------------------------------------------------------|:------------|
-	| ra               | `INT` `UNSIGNED` `NOT NULL` `AUTO INCREMENT` `PRIMARY KEY` | **PK** Número único para identificação da turma (definido arbitrariamente) | |
-	| *id_turma*       | `VARCHAR(120)` `NOT NULL`                                  | Número de identificação da disciplina.                                     | DISCIPLINAS.id |
-	| ano              | `VARCHAR(30)`                                              | Nome completo da disciplina                                                | |
-	| quadrimestre     | `YEAR`                                                     | Quadrimestre em que essa matricula será cursada                            | |
+  | Nome             | Tipo                                                       | Descrição                                                                  | Foreign Key |
+  |:-----------------|:-----------------------------------------------------------|:---------------------------------------------------------------------------|:------------|
+  | ra               | `INT` `UNSIGNED` `NOT NULL` `AUTO INCREMENT` `PRIMARY KEY` | **PK** Número único para identificação da turma (definido arbitrariamente) | |
+  | *id_turma*       | `VARCHAR(120)` `NOT NULL`                                  | Número de identificação da disciplina.                                     | DISCIPLINAS.id |
+  | ano              | `VARCHAR(30)`                                              | Nome completo da disciplina                                                | |
+  | quadrimestre     | `YEAR`                                                     | Quadrimestre em que essa matricula será cursada                            | |
 
-	####Exemplo:
+  ####Exemplo:
   | ra       | id_turma | ano  | quadrimestre |
   |----------|:---------|:-----|--------------|
   | 11111111 | 2        | 2015 | 2            |
 
-	####Código de criação:
+  ####Código de criação:
 
   ```SQL
   Codiguinho SQL para criação
@@ -180,12 +180,12 @@ Campus - Tipo - Nome Turma - Turno (Professor) - Sala
 
 - [3.1](#3.1) <a name='3.1'></a> **evento**: Onde serão armazenadas as informações únicas de cada aluno.
 
-	| Nome             | Tipo                                                       | Descrição                                                                  | Foreign Key |
-	|:-----------------|:-----------------------------------------------------------|:---------------------------------------------------------------------------|:------------|
-	| **id**           | `INT` `UNSIGNED` `NOT NULL` `AUTO INCREMENT` `PRIMARY KEY` | **PK** Número único para identificação da turma (definido arbitrariamente) | |
-	| *categoria*      | `VARCHAR(120)` `NOT NULL`                                  | Número de identificação da disciplina.                                     | DISCIPLINAS.id |
-	| *tipo*           | `VARCHAR(30)`                                              | Nome completo da disciplina                                                | .tipo          |
-	| turma            | `YEAR`                                                     | Quadrimestre em que essa matricula será cursada                            | |
+  | Nome             | Tipo                                                       | Descrição                                                                  | Foreign Key |
+  |:-----------------|:-----------------------------------------------------------|:---------------------------------------------------------------------------|:------------|
+  | **id**           | `INT` `UNSIGNED` `NOT NULL` `AUTO INCREMENT` `PRIMARY KEY` | **PK** Número único para identificação da turma (definido arbitrariamente) | |
+  | *categoria*      | `VARCHAR(120)` `NOT NULL`                                  | Número de identificação da disciplina.                                     | DISCIPLINAS.id |
+  | *tipo*           | `VARCHAR(30)`                                              | Nome completo da disciplina                                                | .tipo          |
+  | turma            | `YEAR`                                                     | Quadrimestre em que essa matricula será cursada                            | |
   | ano              | `YEAR`                                                     | Quadrimestre em que essa matricula será cursada                            | |
   | quadrimestre     | `YEAR`                                                     | Quadrimestre em que essa matricula será cursada                            | |
   | dia              | `YEAR`                                                     | Quadrimestre em que essa matricula será cursada                            | |
@@ -208,7 +208,7 @@ Campus - Tipo - Nome Turma - Turno (Professor) - Sala
   | 2      | aula      | TEO  | 1     | 2015 |      2       |  2  |   2    |10:00        | 12:00        |  0      | 1         | SA     | S501-3 | Marcio Oikawa     |
   | 4      | palestra  | pel  | 0     | 2015 |      2       |  4  |   1    |10:00        | 12:00        |  1      | 1         | SBC    | S402-2 | John "Maddog" Hal |
 
-	####Código de criação:
+  ####Código de criação:
 
   ```
   dia = 0-7, dia da semana.
