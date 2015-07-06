@@ -39,7 +39,6 @@ Campus - Tipo - Nome Turma - Turno (Professor) - Sala
 
 ##3.Tabelas
 - [3.1](#3.1) <a name='3.1'></a> **alunos**: Onde serão armazenadas as informações únicas de cada aluno.
-
 	| nome         | tipo                                                       | descrição                                                                |
 	|:-------------|:-----------------------------------------------------------|:-------------------------------------------------------------------------|
 	| **ra**       | `INT` `UNSIGNED` `NOT NULL` `AUTO INCREMENT` `PRIMARY KEY` | **PK** Número de matrícula do aluno (definido pela PROGRAD)              |
@@ -72,10 +71,9 @@ Campus - Tipo - Nome Turma - Turno (Professor) - Sala
 	```
 
 - [3.2](#3.2) <a name='3.2'></a> **disciplinas**: Relaciona todas as disciplinas ofertáveis pela universidade.
-
 	| nome             | tipo                                                       | descrição                                                                       |
 	|:-----------------|:-----------------------------------------------------------|:--------------------------------------------------------------------------------|
-	| **id**           | `INT` `UNSIGNED` `NOT NULL` `AUTO INCREMENT` `PRIMARY KEY` | **PK** número único para identificação da disciplina (definido arbitrariamente) |
+	| **id**           | `INT` `UNSIGNED` `NOT NULL` `AUTO INCREMENT` `PRIMARY KEY` | **PK** Número único para identificação da disciplina (definido arbitrariamente) |
 	| codigo           | `VARCHAR(120)` `NOT NULL`                                  | Código de identificação da disciplina usado pela PROGRAD                        |
 	| nome             | `VARCHAR(30)`                                              | Nome completo da disciplina                                                     |
 	| apelido          | `BOOLEAN` `DEFAULT FALSE`                                  | Abreviação ou nome comumente usado pelos alunos (FenMec, IEDO, IPE)             |
