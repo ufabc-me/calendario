@@ -39,6 +39,7 @@ Campus - Tipo - Nome Turma - Turno (Professor) - Sala
 
 ##3.Tabelas
 - [3.1](#3.1) <a name='3.1'></a> **alunos**: Onde serão armazenadas as informações únicas de cada aluno.
+
 	| nome         | tipo                                                       | descrição                                                                |
 	|:-------------|:-----------------------------------------------------------|:-------------------------------------------------------------------------|
 	| **ra**       | `INT` `UNSIGNED` `NOT NULL` `AUTO INCREMENT` `PRIMARY KEY` | **PK** Número de matrícula do aluno (definido pela PROGRAD)              |
@@ -71,6 +72,7 @@ Campus - Tipo - Nome Turma - Turno (Professor) - Sala
 	```
 
 - [3.2](#3.2) <a name='3.2'></a> **disciplinas**: Relaciona todas as disciplinas ofertáveis pela universidade.
+
 	| nome             | tipo                                                       | descrição                                                                       |
 	|:-----------------|:-----------------------------------------------------------|:--------------------------------------------------------------------------------|
 	| **id**           | `INT` `UNSIGNED` `NOT NULL` `AUTO INCREMENT` `PRIMARY KEY` | **PK** Número único para identificação da disciplina (definido arbitrariamente) |
@@ -110,6 +112,25 @@ Campus - Tipo - Nome Turma - Turno (Professor) - Sala
   ```
 
 - [3.3](#3.3) <a name='3.3'></a> **turmas**: Relaciona todas formadas, por ano/quadrimestre.
+
+
+	| nome             | tipo                                                       | descrição                                                                       |
+	|:-----------------|:-----------------------------------------------------------|:--------------------------------------------------------------------------------|
+	| **id**           | `INT` `UNSIGNED` `NOT NULL` `AUTO INCREMENT` `PRIMARY KEY` | **PK** Número único para identificação da disciplina (definido arbitrariamente) |
+	| id_disciplina    | `VARCHAR(120)` `NOT NULL`                                  | Código de identificação da disciplina usado pela PROGRAD                        |
+	| turma            | `VARCHAR(30)`                                              | Nome completo da disciplina                                                     |
+	| periodo          | `BOOLEAN` `DEFAULT FALSE`                                  | Abreviação ou nome comumente usado pelos alunos (FenMec, IEDO, IPE)             |
+	| campus           | `YEAR`                                                     | Departamento responsável por ofertar a disciplina                               |
+	| ano              | `YEAR`                                                     | Coordenador da disciplina                                                       |
+	| quadrimestre     | `YEAR`                                                     | URL correspondente da disciplina no sistema UFABCHelp                           |
+
+	####Exemplo:
+  | id | id_disciplina | turma | periodo  | campus | ano  | quadrimestre |
+  |---:|:--------------|:----- |:---------|:-------|:-----|--------------|
+  | 1  | 2014          | A     | Matutino | SA     | 2015 | 2            |
+
+	####Código de criação:
+
   + `id` - Primary Key, número único para identificação da turma (definido arbitrariamente).
   + `id_disciplina` - Foreign Key (disciplinas) número de identificação da disciplina.
   + `turma` - Letra+Número definido pela PROGRAD para diferenciar as turmas.
@@ -119,9 +140,7 @@ Campus - Tipo - Nome Turma - Turno (Professor) - Sala
   + `quadrimestre` - Quadrimestre em que essa matricula será cursada.
 
 
-  | id | id_disciplina | turma | periodo  | campus | ano  | quadrimestre |
-  |---:|:--------------|:----- |:---------|:-------|:-----|--------------|
-  | 1  | 2014          | A     | Matutino | SA     | 2015 | 2            |
+
 
   ```SQL
   CREATE TABLE `turmas` (
