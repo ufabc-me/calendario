@@ -192,11 +192,11 @@ Campus - Tipo - Nome Turma - Turno (Professor) - Sala
   | semana           | `YEAR`                                                     | Quadrimestre em que essa matricula será cursada                            | |
   | hora_inicio      | `YEAR`                                                     | Quadrimestre em que essa matricula será cursada                            | |
   | hora_termino     | `YEAR`                                                     | Quadrimestre em que essa matricula será cursada                            | |
-	| dia_inicio       | `YEAR`                                                     | Quadrimestre em que essa matricula será cursada                            | |
-	| dia_termino      | `YEAR`                                                     | Quadrimestre em que essa matricula será cursada                            | |
+  | dia_inicio       | `YEAR`                                                     | Quadrimestre em que essa matricula será cursada                            | |
+  | dia_termino      | `YEAR`                                                     | Quadrimestre em que essa matricula será cursada                            | |
   | all_day          | `YEAR`                                                     | Quadrimestre em que essa matricula será cursada                            | |
-	| repeticao        | `YEAR`                                                     | Quadrimestre em que essa matricula será cursada                            | |
-	| campus           | `YEAR`                                                     | Quadrimestre em que essa matricula será cursada                            | |
+  | repeticao        | `YEAR`                                                     | Quadrimestre em que essa matricula será cursada                            | |
+  | campus           | `YEAR`                                                     | Quadrimestre em que essa matricula será cursada                            | |
   | local            | `YEAR`                                                     | Quadrimestre em que essa matricula será cursada                            | |
   | responsavel      | `YEAR`                                                     | Quadrimestre em que essa matricula será cursada                            | |
 
