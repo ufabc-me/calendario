@@ -121,8 +121,8 @@ Campus - Tipo - Nome Turma - Turno (Professor) - Sala
   | *id_disciplina*  | `VARCHAR(120)` `NOT NULL`                                  | Número de identificação da disciplina.                                     | DISCIPLINAS.id |
   | turma            | `VARCHAR(30)`                                              | Letra+Número usados pela PROGRAD para diferenciar as turmas                | |
   | periodo          | `BOOLEAN` `DEFAULT FALSE`                                  | Período no qual a maioria das aulas serão realizadas                       | |
-  | *campus*         | `YEAR`                                                     | Unidade onde essa turma terá aulas.                                        | .campus_id     |
-  | ano              | `YEAR`                                                     | Ano em que essa matricula será cursada                                     | |
+  | *campus*         | `YEAR`                                                     | Unidade onde essa turma terá aulas.                                        | CAMPUS.campus_id     |
+  | ano              | `YEAR`                                                     | Ano em que essa turma terá aulas                                           | |
   | quadrimestre     | `YEAR`                                                     | Quadrimestre em que essa matricula será cursada                            | |
 
   ####Exemplo:
@@ -155,9 +155,9 @@ Campus - Tipo - Nome Turma - Turno (Professor) - Sala
 
   | Nome             | Tipo                                                       | Descrição                                                                  | Foreign Key |
   |:-----------------|:-----------------------------------------------------------|:---------------------------------------------------------------------------|:------------|
-  | ra               | `INT` `UNSIGNED` `NOT NULL` `AUTO INCREMENT` `PRIMARY KEY` | **PK** Número único para identificação da turma (definido arbitrariamente) | |
-  | *id_turma*       | `VARCHAR(120)` `NOT NULL`                                  | Número de identificação da disciplina.                                     | DISCIPLINAS.id |
-  | ano              | `VARCHAR(30)`                                              | Nome completo da disciplina                                                | |
+  | *ra*             | `INT` `UNSIGNED` `NOT NULL` `AUTO INCREMENT` `PRIMARY KEY` | Número de matrícula do aluno (definido pela PROGRAD)                       | ALUNOS.ra   |
+  | *id_turma*       | `VARCHAR(120)` `NOT NULL`                                  | Número único para identificação da turma (definido arbitrariamente)        | TURMAS.id   |
+  | ano              | `VARCHAR(30)`                                              | Ano em que essa matricula será cursada                                     | |
   | quadrimestre     | `YEAR`                                                     | Quadrimestre em que essa matricula será cursada                            | |
 
   ####Exemplo:
@@ -171,21 +171,14 @@ Campus - Tipo - Nome Turma - Turno (Professor) - Sala
   Codiguinho SQL para criação
   ```
 
-
-  + `ra` - Foreign Key (alunos) número de matrícula do aluno.
-  + `id_turma` - Foreign Key (turmas) número de identificação da turma.
-  + `ano` - Ano em que essa matricula será cursada.
-  + `quadrimestre` - Quadrimestre em que essa matricula será cursada.
-
-
-- [3.1](#3.1) <a name='3.1'></a> **evento**: Onde serão armazenadas as informações únicas de cada aluno.
+- [3.5](#3.5) <a name='3.5'></a> **evento**: Onde serão armazenadas as informações únicas de cada aluno.
 
   | Nome             | Tipo                                                       | Descrição                                                                  | Foreign Key |
   |:-----------------|:-----------------------------------------------------------|:---------------------------------------------------------------------------|:------------|
   | **id**           | `INT` `UNSIGNED` `NOT NULL` `AUTO INCREMENT` `PRIMARY KEY` | **PK** Número único para identificação da turma (definido arbitrariamente) | |
   | *categoria*      | `VARCHAR(120)` `NOT NULL`                                  | Número de identificação da disciplina.                                     | DISCIPLINAS.id |
-  | *tipo*           | `VARCHAR(30)`                                              | Nome completo da disciplina                                                | .tipo          |
-  | turma            | `YEAR`                                                     | Quadrimestre em que essa matricula será cursada                            | |
+  | *tipo*           | `VARCHAR(30)`                                              | Tipo de aula (teoria, prática)                                             | .tipo          |
+  | turma            | `YEAR`                                                     | Quadrimestre em que essa matricula será cursada                            |  |
   | ano              | `YEAR`                                                     | Quadrimestre em que essa matricula será cursada                            | |
   | quadrimestre     | `YEAR`                                                     | Quadrimestre em que essa matricula será cursada                            | |
   | dia              | `YEAR`                                                     | Quadrimestre em que essa matricula será cursada                            | |
