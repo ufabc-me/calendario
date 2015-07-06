@@ -20,6 +20,7 @@
  1. [Servidor](#6Servidor)
  1. [Outros](#7Outros)
  1. [Referências](#8Referências)
+ 1. [Anotações/Caos](#9Anotações)
 
 ##1.Introdução
 
@@ -195,6 +196,26 @@ Campus - Tipo - Nome Turma - Turno (Professor) - Sala
 * [RFC2445 - iCalendar](https://www.ietf.org/rfc/rfc2445.txt)
 * [Python icalendar library](https://pypi.python.org/pypi/icalendar/3.9.0)
 * [Tabula](http://tabula.technology/) (Tabula is a tool for liberating data tables locked inside PDF files)
+
+###9.Anotações
+
+```SQL
+create table student(
+    -> first_name varchar(30) NOT NULL,
+    -> last_name varchar(30) not null,
+    -> email varchar(60) null,
+    -> street varchar(50) not null,
+    -> city varchar(40) not null,
+    -> state char(2) not null default "PA",
+    -> zip mediumint unsigned not null,
+    -> phone varchar(20) not null,
+    -> birth_date DATE not null,
+    -> sex enum('M','F') NOT null,
+    -> date_entered timestamp,
+    -> lunch_cost FLOAT null,
+    -> student_id int unsigned not null auto_increment primary key);
+```
+
 
 
 
