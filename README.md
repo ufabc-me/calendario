@@ -43,7 +43,7 @@ Campus - Tipo - Nome Turma - Turno (Professor) - Sala
 	| Nome         | Tipo                                                       | Descrição                                                                |
 	|:-------------|:-----------------------------------------------------------|:-------------------------------------------------------------------------|
 	| **ra**       | `INT` `UNSIGNED` `NOT NULL` `AUTO INCREMENT` `PRIMARY KEY` | **PK** Número de matrícula do aluno (definido pela PROGRAD)              |
-	| nome         | `VARCHAR(120)` `NOT NULL`                                  | Nome completo (lista da prograd) - não contém caracteres especiais)      |
+	| nome         | `VARCHAR(120)` `NOT NULL`                                  | Nome completo (lista da PROGRAD) - não contém caracteres especiais)      |
 	| username     | `VARCHAR(30)`                                              | Parte que vem antes do email `@aluno.ufabc.edu.br`, mesmo login do Tidia |
 	| email_valido | `BOOLEAN` `DEFAULT FALSE`                                  | Flag booleana para armazenar a validação por email                       |
 	| ano_ingresso | `YEAR`                                                     | Ano de ingresso                                                          |
@@ -119,9 +119,9 @@ Campus - Tipo - Nome Turma - Turno (Professor) - Sala
 	|:-----------------|:-----------------------------------------------------------|:---------------------------------------------------------------------------|:------------|
 	| **id**           | `INT` `UNSIGNED` `NOT NULL` `AUTO INCREMENT` `PRIMARY KEY` | **PK** Número único para identificação da turma (definido arbitrariamente) | |
 	| *id_disciplina*  | `VARCHAR(120)` `NOT NULL`                                  | Número de identificação da disciplina.                                     | DISCIPLINAS.id |
-	| turma            | `VARCHAR(30)`                                              | Nome completo da disciplina                                                | |
+	| turma            | `VARCHAR(30)`                                              | Letra+Número usados pela PROGRAD para diferenciar as turmas                | |
 	| periodo          | `BOOLEAN` `DEFAULT FALSE`                                  | Período no qual a maioria das aulas serão realizadas                       | |
-	| campus           | `YEAR`                                                     | Unidade onde essa turma terá aulas.                                        | |
+	| *campus*         | `YEAR`                                                     | Unidade onde essa turma terá aulas.                                        | .campus_id     |
 	| ano              | `YEAR`                                                     | Ano em que essa matricula será cursada                                     | |
 	| quadrimestre     | `YEAR`                                                     | Quadrimestre em que essa matricula será cursada                            | |
 
@@ -184,7 +184,7 @@ Campus - Tipo - Nome Turma - Turno (Professor) - Sala
 	|:-----------------|:-----------------------------------------------------------|:---------------------------------------------------------------------------|:------------|
 	| **id**           | `INT` `UNSIGNED` `NOT NULL` `AUTO INCREMENT` `PRIMARY KEY` | **PK** Número único para identificação da turma (definido arbitrariamente) | |
 	| *categoria*      | `VARCHAR(120)` `NOT NULL`                                  | Número de identificação da disciplina.                                     | DISCIPLINAS.id |
-	| tipo             | `VARCHAR(30)`                                              | Nome completo da disciplina                                                | |
+	| *tipo*           | `VARCHAR(30)`                                              | Nome completo da disciplina                                                | .tipo          |
 	| turma            | `YEAR`                                                     | Quadrimestre em que essa matricula será cursada                            | |
   | ano              | `YEAR`                                                     | Quadrimestre em que essa matricula será cursada                            | |
   | quadrimestre     | `YEAR`                                                     | Quadrimestre em que essa matricula será cursada                            | |
@@ -196,7 +196,7 @@ Campus - Tipo - Nome Turma - Turno (Professor) - Sala
   | dia_termino      | `YEAR`                                                     | Quadrimestre em que essa matricula será cursada                            | |
   | all_day          | `YEAR`                                                     | Quadrimestre em que essa matricula será cursada                            | |
   | repeticao        | `YEAR`                                                     | Quadrimestre em que essa matricula será cursada                            | |
-  | campus           | `YEAR`                                                     | Quadrimestre em que essa matricula será cursada                            | |
+  | *campus*         | `YEAR`                                                     | Quadrimestre em que essa matricula será cursada                            | CAMPUS.id |
   | local            | `YEAR`                                                     | Quadrimestre em que essa matricula será cursada                            | |
   | responsavel      | `YEAR`                                                     | Quadrimestre em que essa matricula será cursada                            | |
 
