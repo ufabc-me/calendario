@@ -118,7 +118,7 @@ Campus - Tipo - Nome Turma - Turno (Professor) - Sala
 	| Nome             | Tipo                                                       | Descrição                                                                  | Foreign Key |
 	|:-----------------|:-----------------------------------------------------------|:---------------------------------------------------------------------------|:------------|
 	| **id**           | `INT` `UNSIGNED` `NOT NULL` `AUTO INCREMENT` `PRIMARY KEY` | **PK** Número único para identificação da turma (definido arbitrariamente) | |
-	| id_disciplina    | `VARCHAR(120)` `NOT NULL`                                  | Número de identificação da disciplina.                                     | DISCIPLINAS.id |
+	| *id_disciplina*  | `VARCHAR(120)` `NOT NULL`                                  | Número de identificação da disciplina.                                     | DISCIPLINAS.id |
 	| turma            | `VARCHAR(30)`                                              | Nome completo da disciplina                                                | |
 	| periodo          | `BOOLEAN` `DEFAULT FALSE`                                  | Período no qual a maioria das aulas serão realizadas                       | |
 	| campus           | `YEAR`                                                     | Unidade onde essa turma terá aulas.                                        | |
@@ -156,7 +156,7 @@ Campus - Tipo - Nome Turma - Turno (Professor) - Sala
 	| Nome             | Tipo                                                       | Descrição                                                                  | Foreign Key |
 	|:-----------------|:-----------------------------------------------------------|:---------------------------------------------------------------------------|:------------|
 	| ra               | `INT` `UNSIGNED` `NOT NULL` `AUTO INCREMENT` `PRIMARY KEY` | **PK** Número único para identificação da turma (definido arbitrariamente) | |
-	| id_turma         | `VARCHAR(120)` `NOT NULL`                                  | Número de identificação da disciplina.                                     | DISCIPLINAS.id |
+	| *id_turma*       | `VARCHAR(120)` `NOT NULL`                                  | Número de identificação da disciplina.                                     | DISCIPLINAS.id |
 	| ano              | `VARCHAR(30)`                                              | Nome completo da disciplina                                                | |
 	| quadrimestre     | `YEAR`                                                     | Quadrimestre em que essa matricula será cursada                            | |
 
@@ -179,6 +179,39 @@ Campus - Tipo - Nome Turma - Turno (Professor) - Sala
 
 
 - [3.1](#3.1) <a name='3.1'></a> **evento**: Onde serão armazenadas as informações únicas de cada aluno.
+
+	| Nome             | Tipo                                                       | Descrição                                                                  | Foreign Key |
+	|:-----------------|:-----------------------------------------------------------|:---------------------------------------------------------------------------|:------------|
+	| **id**           | `INT` `UNSIGNED` `NOT NULL` `AUTO INCREMENT` `PRIMARY KEY` | **PK** Número único para identificação da turma (definido arbitrariamente) | |
+	| *categoria*      | `VARCHAR(120)` `NOT NULL`                                  | Número de identificação da disciplina.                                     | DISCIPLINAS.id |
+	| tipo             | `VARCHAR(30)`                                              | Nome completo da disciplina                                                | |
+	| turma            | `YEAR`                                                     | Quadrimestre em que essa matricula será cursada                            | |
+	| ano              | `YEAR`                                                     | Quadrimestre em que essa matricula será cursada                            | |
+  | quadrimestre     | `YEAR`                                                     | Quadrimestre em que essa matricula será cursada                            | |
+	| dia              | `YEAR`                                                     | Quadrimestre em que essa matricula será cursada                            | |
+  | semana           | `YEAR`                                                     | Quadrimestre em que essa matricula será cursada                            | |
+	| hora_inicio      | `YEAR`                                                     | Quadrimestre em que essa matricula será cursada                            | |
+  | hora_termino     | `YEAR`                                                     | Quadrimestre em que essa matricula será cursada                            | |
+	| dia_inicio       | `YEAR`                                                     | Quadrimestre em que essa matricula será cursada                            | |
+	| dia_termino      | `YEAR`                                                     | Quadrimestre em que essa matricula será cursada                            | |
+  | all_day          | `YEAR`                                                     | Quadrimestre em que essa matricula será cursada                            | |
+	| repeticao        | `YEAR`                                                     | Quadrimestre em que essa matricula será cursada                            | |
+	| campus           | `YEAR`                                                     | Quadrimestre em que essa matricula será cursada                            | |
+  | local            | `YEAR`                                                     | Quadrimestre em que essa matricula será cursada                            | |
+  | responsavel      | `YEAR`                                                     | Quadrimestre em que essa matricula será cursada                            | |
+
+
+
+	####Exemplo:
+  | ra       | id_turma | ano  | quadrimestre |
+  |----------|:---------|:-----|--------------|
+  | 11111111 | 2        | 2015 | 2            |
+
+	####Código de criação:
+
+
+
+
   + `ra` - Primary Key, número de matrícula do aluno.
 
   | id     | categoria | tipo | turma | ano  | quadrimestre | dia | semana | hora_inicio | hora_termino | all_day | repeticao | campus | local  | responsavel       |
