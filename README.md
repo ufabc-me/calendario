@@ -40,24 +40,19 @@ Campus - Tipo - Nome Turma - Turno (Professor) - Sala
 ##3.Tabelas
 - [3.1](#3.1) <a name='3.1'></a> **alunos**: Onde serão armazenadas as informações únicas de cada aluno.
 
-	| nome         | tipo                                          | descrição                                                                                         |
-	|:-------------|:----------------------------------------------|:--------------------------------------------------------------------------------------------------|
-	| **RA**       | `INT` `UNSIGNED` `NOT NULL` `AUTO INCREMENT`  | **PK** Número de matrícula do aluno (definido pela PROGRAD)                                       |
-	| nome         | `VARCHAR(120)` `NOT NULL`                     | Nome completo (tão completo quanto estiver na lista da prograd - não contém caracteres especiais) |
-	| username     | `VARCHAR(120)`                                | Parte que vem antes do email `@aluno.ufabc.edu.br`, mesmo login do Tidia                          |
-	| email_valido | `BOOLEAN` `DEFAULT FALSE`                     | Flag booleana para armazenar a validação por email                                                |
-	| ano_ingresso | `YEAR`                                        | Ano de ingresso                                                                                   |
-
-	+ `ra` - Primary Key, número de matrícula do aluno.
-	+ `nome` - Nome completo (tão completo quanto estiver na lista da prograd - não contém caracteres especiais).
-	+ `username` - Parte que vem antes do email @aluno.ufabc.edu.br, mesmo login do Tidia.
-	+ `email_valido` - Flag booleana para armazenar a validação por email.
-	+ `ano_ingresso` - Ano de ingresso.
+	| nome         | tipo                                                       | descrição                                                                |
+	|:-------------|:-----------------------------------------------------------|:-------------------------------------------------------------------------|
+	| **RA**       | `INT` `UNSIGNED` `NOT NULL` `AUTO INCREMENT` `PRIMARY KEY` | **PK** Número de matrícula do aluno (definido pela PROGRAD)              |
+	| nome         | `VARCHAR(120)` `NOT NULL`                                  | Nome completo (lista da prograd) - não contém caracteres especiais)      |
+	| username     | `VARCHAR(30)`                                              | Parte que vem antes do email `@aluno.ufabc.edu.br`, mesmo login do Tidia |
+	| email_valido | `BOOLEAN` `DEFAULT FALSE`                                  | Flag booleana para armazenar a validação por email                       |
+	| ano_ingresso | `YEAR`                                                     | Ano de ingresso                                                          |
 
 	| ra       | nome     | username | email_valido | ano_ingresso |
 	|:---------|:---------|:---------|:-------------|:-------------|
 	| 11111111 | John Doe | j.doe    | 0            | 2014         |
 
+	####Código de criação:
 	```SQL
 	CREATE TABLE `aluno` (
 		ra INT(8) NOT NULL,
