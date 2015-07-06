@@ -190,8 +190,8 @@ Campus - Tipo - Nome Turma - Turno (Professor) - Sala
   | repeticao           | `YEAR`                                                     | Flag para indicar se o evento terá repetição                               | |
   | repeticao_intervalo | `YEAR`                                                     | Indica a cada quantos dias deve ser a repetiçao                            | |
   | all_day             | `YEAR`                                                     | Flag para indicar que o evendo dura o dia inteiro                          | |
-  | repeticao           | `YEAR`                                                     | Flag para indicar se o evento terá repetição                               | |
-  | dia_hora_inicio     | `DATETIME`                                                 | Dia-Hora em que esse evento iniciará                                       | |
+  | dia_inicio          | `YEAR`                                                     | Dia em que o evento iniciará                                               | |
+  | hora_inicio         | `DATETIME`                                                 | Hora em que esse evento iniciará                                           | |
   | hora_termino        | `YEAR`                                                     | Hora em que esse evento termina                                            | |
   | dia_termino         | `YEAR`                                                     | Caso tenha repetição, dia em que esse evento termina                       | |
   | responsavel         | `YEAR`                                                     | Quadrimestre em que essa matricula será cursada                            | |
