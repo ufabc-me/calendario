@@ -92,6 +92,7 @@ Campus - Tipo - Nome Turma - Turno (Professor) - Sala
   | 1  | mc3310  | Banco de Dados | BD      | CMCC         | ZZZ AAA     | asdad            | 3 | 3 | 3 |
 
 	####Código de criação:
+
   ```SQL
   CREATE TABLE `disciplina` (
   	id MEDIUMINT NOT NULL AUTO_INCREMENT,
@@ -114,15 +115,15 @@ Campus - Tipo - Nome Turma - Turno (Professor) - Sala
 - [3.3](#3.3) <a name='3.3'></a> **turmas**: Relaciona todas formadas, por ano/quadrimestre.
 
 
-	| nome             | tipo                                                       | descrição                                                                       |
-	|:-----------------|:-----------------------------------------------------------|:--------------------------------------------------------------------------------|
-	| **id**           | `INT` `UNSIGNED` `NOT NULL` `AUTO INCREMENT` `PRIMARY KEY` | **PK** Número único para identificação da disciplina (definido arbitrariamente) |
-	| id_disciplina    | `VARCHAR(120)` `NOT NULL`                                  | Código de identificação da disciplina usado pela PROGRAD                        |
-	| turma            | `VARCHAR(30)`                                              | Nome completo da disciplina                                                     |
-	| periodo          | `BOOLEAN` `DEFAULT FALSE`                                  | Abreviação ou nome comumente usado pelos alunos (FenMec, IEDO, IPE)             |
-	| campus           | `YEAR`                                                     | Departamento responsável por ofertar a disciplina                               |
-	| ano              | `YEAR`                                                     | Coordenador da disciplina                                                       |
-	| quadrimestre     | `YEAR`                                                     | URL correspondente da disciplina no sistema UFABCHelp                           |
+	| nome             | tipo                                                       | descrição                                                                  | Foreign Key |
+	|:-----------------|:-----------------------------------------------------------|:---------------------------------------------------------------------------|-|
+	| **id**           | `INT` `UNSIGNED` `NOT NULL` `AUTO INCREMENT` `PRIMARY KEY` | **PK** Número único para identificação da turma (definido arbitrariamente) | |
+	| id_disciplina    | `VARCHAR(120)` `NOT NULL`                                  | Número de identificação da disciplina.                                     | DISCIPLINAS.id |
+	| turma            | `VARCHAR(30)`                                              | Nome completo da disciplina                                                | |
+	| periodo          | `BOOLEAN` `DEFAULT FALSE`                                  | Período no qual a maioria das aulas serão realizadas                       | |
+	| campus           | `YEAR`                                                     | Unidade onde essa turma terá aulas.                                        | |
+	| ano              | `YEAR`                                                     | Ano em que essa matricula será cursada                                     | |
+	| quadrimestre     | `YEAR`                                                     | Quadrimestre em que essa matricula será cursada                            | |
 
 	####Exemplo:
   | id | id_disciplina | turma | periodo  | campus | ano  | quadrimestre |
@@ -130,17 +131,6 @@ Campus - Tipo - Nome Turma - Turno (Professor) - Sala
   | 1  | 2014          | A     | Matutino | SA     | 2015 | 2            |
 
 	####Código de criação:
-
-  + `id` - Primary Key, número único para identificação da turma (definido arbitrariamente).
-  + `id_disciplina` - Foreign Key (disciplinas) número de identificação da disciplina.
-  + `turma` - Letra+Número definido pela PROGRAD para diferenciar as turmas.
-  + `periodo` - Período no qual a maioria das aulas serão realizadas.
-  + `campus` - Unidade onde essa turma terá aulas.
-  + `ano` - Ano em que essa matricula será cursada.
-  + `quadrimestre` - Quadrimestre em que essa matricula será cursada.
-
-
-
 
   ```SQL
   CREATE TABLE `turmas` (
