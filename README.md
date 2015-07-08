@@ -69,12 +69,12 @@ Campus - Tipo - Nome Turma - Turno (Professor) - Sala
   | Nome             | Tipo                                                       | Descrição                                                                       |
   |:-----------------|:-----------------------------------------------------------|:--------------------------------------------------------------------------------|
   | **id**           | `INT` `UNSIGNED` `NOT NULL` `AUTO_INCREMENT` `PRIMARY KEY` | **PK** Número único para identificação da disciplina (definido arbitrariamente) |
-  | codigo           | `VARCHAR(10)` `NOT NULL`                                   | Código de identificação da disciplina usado pela PROGRAD                        |
-  | nome             | `VARCHAR(50)` `NOT NULL`                                   | Nome completo da disciplina                                                     |
-  | apelido          | `VARCHAR(10)`                                              | Abreviação ou nome comumente usado pelos alunos (FenMec, IEDO, IPE)             |
+  | codigo           | `VARCHAR(10)` `NOT NULL` `UNIQUE`                          | Código de identificação da disciplina usado pela PROGRAD                        |
+  | nome             | `VARCHAR(50)` `NOT NULL` `UNIQUE`                          | Nome completo da disciplina                                                     |
+  | apelido          | `VARCHAR(10)` `UNIQUE`                                     | Abreviação ou nome comumente usado pelos alunos (FenMec, IEDO, IPE)             |
   | departamento     | `VARCHAR(10)`                                              | Departamento responsável por ofertar a disciplina                               |
   | coordenador      | `VARCHAR(120)`                                             | Coordenador da disciplina                                                       |
-  | pagina_ufabchelp | `VARCHAR(30)`                                              | URL correspondente da disciplina no sistema UFABCHelp                           |
+  | pagina_ufabchelp | `VARCHAR(30)` `UNIQUE`                                    | URL correspondente da disciplina no sistema UFABCHelp                           |
   | t                | `TINYINT` `UNSIGNED`                                       | Quantidade de horas para teoria                                                 |
   | p                | `TINYINT` `UNSIGNED`                                       | Quantidade de horas para prática                                                |
   | i                | `TINYINT` `UNSIGNED`                                       | Quantidade de horas para estudo individual                                      |
