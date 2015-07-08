@@ -196,6 +196,12 @@ Campus - Tipo - Nome Turma - Turno (Professor) - Sala
   ####Código de criação:
 
 ###4.Stored Procedures
+* Gerar calendário a partir de RA - ANO - QUADRIMESTRE
+* Gerar lista de presença a partir de Nome Professor - Turma / Evento
+* Incluir evento no calendário
+* Confirmar presença em evento
+* Incluir dados usuário / validar email
+
 
 
 ###5.Dados da Prograd
