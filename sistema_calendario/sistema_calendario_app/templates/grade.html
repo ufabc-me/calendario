@@ -1,0 +1,144 @@
+<!-- extend base layout -->
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="container">
+        <div class="header">
+            <nav>
+                <ul class="nav nav-pills pull-right">
+                    <li role="presentation"  class="active"><a href="/grade">Grade</a>
+                    </li>
+                    <li role="presentation"><a href="/lista">Lista</a>
+                    </li>
+                    <li role="presentation"><a href="/eventos">Eventos</a>
+                    </li>
+                </ul>
+            </nav>
+            <h3 class="text-muted">calendario.ufabc.me</h3>
+        </div>
+
+
+
+  <div class="row">
+
+
+
+
+<form class="form-inline">
+  <div class="form-group">
+    <label class="sr-only" for="exampleInputEmail3">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail3" placeholder="RA">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail2">Ano</label>
+    <select class="form-control" id="exampleInputEmail2">
+      <option>2015</option>
+      <option>2014</option>
+      <option>2013</option>
+      <option>2012</option>
+      <option>2011</option>
+    </select>
+
+  </div>
+
+  <div class="form-group">
+    <label for="exampleInputEmail2">Quadrimestre</label>
+    <select class="form-control" id="exampleInputEmail2">
+      <option>2</option>
+      <option>1</option>
+      <option>3</option>
+    </select>
+
+  </div>
+
+
+  <button type="submit" class="btn btn-default">Consultar</button>
+</form>
+
+<br />
+<table class="table table-hover">
+<caption>Priscila Da Silva Pereira - 11077615 <button class="fa fa-link"></button></caption>
+<thead>
+  <th>Revezamento</th>
+  <th>Nome</th>
+  <th>Tipo</th>
+  <th>dia</th>
+  <th>hora início</th>
+  <th>hora término</th>
+  <th>docente</th>
+  <th>campus</th>
+</thead>
+<tbody>
+<tr>
+<th scope="row">não</th>
+  <td>Bases Matemáticas</td>
+  <td>TEO</td>
+  <td>segunda</td>
+  <td>08:00</td>
+  <td>11:00</td>
+  <td>Carlos Suetoshi Miyazawa</td>
+  <td>SA</td>
+</tr>
+<th scope="row">não</th>
+  <td>Base Experimental das Ciências Naturais</td>
+  <td>PRAT</td>
+  <td>terça</td>
+  <td>09:00</td>
+  <td>12:00</td>
+  <td>Fernanda Franzolin</td>
+  <td>SA</td>
+</tr>
+<th scope="row">não</th>
+  <td>Bases Computacionais da Ciência</td>
+  <td>PRAT</td>
+  <td>quarta</td>
+  <td>16:00</td>
+  <td>18:00</td>
+  <td>Cecilia Bertoni Martha Hadler Chirenti</td>
+  <td>SA</td>
+</tr>
+<th scope="row">não</th>
+  <td>Estrutura da Matéria</td>
+  <td>TEO</td>
+  <td>quinta</td>
+  <td>19:00</td>
+  <td>22:00</td>
+  <td>Juliana Casares Araujo Chaves</td>
+  <td>SA</td>
+</tr>
+<th scope="row">não</th>
+  <td>Origem da Vida e Diversidade dos Seres Vivos</td>
+  <td>TEO</td>
+  <td>quinta</td>
+  <td>19:00</td>
+  <td>21:00</td>
+  <td>Claudio Nogueira De Meneses</td>
+  <td>SA</td>
+</tr>
+<th scope="row">não</th>
+  <td>Bases Computacionais da Ciência</td>
+  <td>PRAT</td>
+  <td>sexta</td>
+  <td>16:00</td>
+  <td>18:00</td>
+  <td>Cecilia Bertoni Martha Hadler Chirenti</td>
+  <td>SA</td>
+</tr>
+<th scope="row">não</th>
+  <td>Origem da Vida e Diversidade dos Seres Vivos</td>
+  <td>TEO</td>
+  <td>sexta</td>
+  <td>19:00</td>
+  <td>21:00</td>
+  <td>Claudio Nogueira De Meneses</td>
+  <td>SA</td>
+</tr>
+
+
+</tbody>
+</table>
+
+<a class="text-center">Como adicionar ao android/iphone/outlook/gmail?</a>
+
+
+{% endblock %}

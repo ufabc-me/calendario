@@ -1,0 +1,342 @@
+<!-- extend base layout -->
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="container">
+        <div class="header">
+            <nav>
+                <ul class="nav nav-pills pull-right">
+                    <li role="presentation"><a href="/grade">Grade</a>
+                    </li>
+                    <li role="presentation" class="active"><a href="/lista">Lista</a>
+                    </li>
+                    <li role="presentation"><a href="/eventos">Eventos</a>
+                    </li>
+                </ul>
+            </nav>
+            <h3 class="text-muted">calendario.ufabc.me</h3>
+        </div>
+
+
+
+  <div class="row">
+
+
+<form class="form-inline">
+  <div class="form-group">
+    <label class="sr-only" for="exampleInputEmail3">Nome Disciplina</label>
+    <input type="email" class="form-control" id="exampleInputEmail3" placeholder="Nome Disciplina">
+  </div>
+
+  <div class="form-group">
+    <select class="form-control" id="exampleInputEmail2">
+      <option>2015</option>
+      <option>2014</option>
+      <option>2013</option>
+      <option>2012</option>
+      <option>2011</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="exampleInputEmail2">Quadrimestre</label>
+    <select class="form-control" id="exampleInputEmail2">
+      <option>2</option>
+      <option>1</option>
+      <option>3</option>
+    </select>
+  </div>
+
+ <div class="form-group">
+    <label for="exampleInputEmail2">Turma</label>
+    <select class="form-control" id="exampleInputEmail2">
+      <option>A1</option>
+      <option>1</option>
+      <option>3</option>
+    </select>
+  </div>
+
+
+
+ <div class="form-group">
+    <label for="exampleInputEmail2">Período</label>
+    <select class="form-control" id="exampleInputEmail2">
+      <option>diurno</option>
+      <option>noturno</option>
+    </select>
+
+  </div>
+
+
+
+  <button type="submit" class="btn btn-default">Consultar</button>
+</form>
+
+<br />
+<table class="table table-hover">
+<caption>Bases Matemáticas <button class="fa fa-link"></button> <button type="submit" class="btn btn-small btn-default">csv</button></caption>
+<thead>
+  <th>Nome</th>
+  <th>RA</th>
+</thead>
+<tbody>
+
+<tr>
+  <td>Alexia Ysabelli Antunes</td>
+  <td>11055215</td>
+</tr>
+<tr>
+  <td>Allan Calixto Severo Da Silva</td>
+  <td>11019915</td>
+</tr>
+<tr>
+  <td>Aristeu Inacio Da Silva</td>
+  <td>11106315</td>
+</tr>
+<tr>
+  <td>Brian Alves Andreossi</td>
+  <td>11060215</td>
+</tr>
+<tr>
+  <td>Bruna Honoria Pereira</td>
+  <td>11079315</td>
+</tr>
+<tr>
+  <td>Bruna Pereira Santos</td>
+  <td>11002215</td>
+</tr>
+<tr>
+  <td>Caio Cesar Araujo Sampaio</td>
+  <td>11009615</td>
+</tr>
+<tr>
+  <td>Camilla Portugal Machado</td>
+  <td>11063715</td>
+</tr>
+<tr>
+  <td>Carlos Andre Szabo</td>
+  <td>11044415</td>
+</tr>
+<tr>
+  <td>Carlos Eduardo Rodrigues Gracio</td>
+  <td>11014815</td>
+</tr>
+<tr>
+  <td>Caroline Alves Da Silva</td>
+  <td>11015615</td>
+</tr>
+<tr>
+  <td>Caroline Da Costa Silva</td>
+  <td>11086615</td>
+</tr>
+<tr>
+  <td>Caue Lopes Mendes</td>
+  <td>11005415</td>
+</tr>
+<tr>
+  <td>Cibele Sayuri Matsushita Rodrigues</td>
+  <td>11040915</td>
+</tr>
+<tr>
+  <td>Clara Nunes Silva Bahia</td>
+  <td>11080315</td>
+</tr>
+<tr>
+  <td>Daniel De Jesus Siqueira</td>
+  <td>11053115</td>
+</tr>
+<tr>
+  <td>Danilo Calhes Paixao Dos Santos</td>
+  <td>11025215</td>
+</tr>
+<tr>
+  <td>Ellyn Ayumi Kosse</td>
+  <td>11058415</td>
+</tr>
+<tr>
+  <td>Eric Lobato Bandeira</td>
+  <td>11012915</td>
+</tr>
+<tr>
+  <td>Erick Akio Oti Aoyagui</td>
+  <td>11021315</td>
+</tr>
+<tr>
+  <td>Fabio Marret De Carvalho</td>
+  <td>11016415</td>
+</tr>
+<tr>
+  <td>Filipe De Oliveira Souza</td>
+  <td>11008215</td>
+</tr>
+<tr>
+  <td>Gabriel Mariano Costa</td>
+  <td>11048015</td>
+</tr>
+<tr>
+  <td>Gabriel Reis Batalha</td>
+  <td>11029115</td>
+</tr>
+<tr>
+  <td>Gabriela Sayuri Oshiro De Arruda</td>
+  <td>11037515</td>
+</tr>
+<tr>
+  <td>Guilherme Kaissar Ferreira Khoury</td>
+  <td>11027515</td>
+</tr>
+<tr>
+  <td>Guilherme Pereira Mendes</td>
+  <td>11056815</td>
+</tr>
+<tr>
+  <td>Gustavo Do Carmo Garcia</td>
+  <td>11033715</td>
+</tr>
+<tr>
+  <td>Gustavo Felix De Souza Lopes</td>
+  <td>11006315</td>
+</tr>
+<tr>
+  <td>Gustavo Lowndes Yoshida</td>
+  <td>11001415</td>
+</tr>
+<tr>
+  <td>Higino Gabriel De Andrade</td>
+  <td>11051915</td>
+</tr>
+<tr>
+  <td>Isabelly Stringhetta Zini</td>
+  <td>11007215</td>
+</tr>
+<tr>
+  <td>Jaqueline Willens Garcia Matheus</td>
+  <td>11105515</td>
+</tr>
+<tr>
+  <td>Jessica Veridiana Franco</td>
+  <td>11067915</td>
+</tr>
+<tr>
+  <td>Jorge Rizzini De Castro Filho</td>
+  <td>11071015</td>
+</tr>
+<tr>
+  <td>Juliana Santos Valente</td>
+  <td>11068615</td>
+</tr>
+<tr>
+  <td>Julio Tan Barbosa De Oliveira</td>
+  <td>11061715</td>
+</tr>
+<tr>
+  <td>Kevin William De Freitas Souza</td>
+  <td>11013915</td>
+</tr>
+<tr>
+  <td>Leonardo Neves Danilaitis</td>
+  <td>11022515</td>
+</tr>
+<tr>
+  <td>Leticia Yuka Fukuda</td>
+  <td>11075315</td>
+</tr>
+<tr>
+  <td>Lorena Rodriguez Haase</td>
+  <td>11010615</td>
+</tr>
+<tr>
+  <td>Luara Carneiro Gobbo</td>
+  <td>11076915</td>
+</tr>
+<tr>
+  <td>Lucas Menezes Dos Santos</td>
+  <td>11071915</td>
+</tr>
+<tr>
+  <td>Lucas Nasser Mietti</td>
+  <td>11073215</td>
+</tr>
+<tr>
+  <td>Lucas Wanderoscki</td>
+  <td>11042815</td>
+</tr>
+<tr>
+  <td>Maria Clara Lima Marques Do Nascimento</td>
+  <td>11067215</td>
+</tr>
+<tr>
+  <td>Matheus Araujo De Sa</td>
+  <td>11078215</td>
+</tr>
+<tr>
+  <td>Matheus Oliveira Cyrillo</td>
+  <td>11024015</td>
+</tr>
+<tr>
+  <td>Michel Nunes Araujo</td>
+  <td>11046415</td>
+</tr>
+<tr>
+  <td>Mirela De Oliveira Tomazini</td>
+  <td>11004315</td>
+</tr>
+<tr>
+  <td>Nathaniel Ferraz Da Silva</td>
+  <td>11114415</td>
+</tr>
+<tr>
+  <td>Pietro Catelli Coelho</td>
+  <td>11031015</td>
+</tr>
+<tr>
+  <td>Ricardo Rodrigues Gitti</td>
+  <td>11000115</td>
+</tr>
+<tr>
+  <td>Rosana Furrier</td>
+  <td>11107715</td>
+</tr>
+<tr>
+  <td>Sergio Enzo Sampa</td>
+  <td>11011815</td>
+</tr>
+<tr>
+  <td>Thiago Andreieve Gazani Pessoa</td>
+  <td>11065615</td>
+</tr>
+<tr>
+  <td>Veronica Gomes Zauli</td>
+  <td>11109615</td>
+</tr>
+<tr>
+  <td>Victor Garcia Morkoski</td>
+  <td>11003215</td>
+</tr>
+<tr>
+  <td>Vinicius Torraca Teixeira</td>
+  <td>11000715</td>
+</tr>
+<tr>
+  <td>Vitor Episcopo Edo</td>
+  <td>11017715</td>
+</tr>
+<tr>
+  <td>Vivianne De Lucca Soave</td>
+  <td>11057315</td>
+</tr>
+<tr>
+  <td>William Maldonado Raia</td>
+  <td>11035515</td>
+</tr>
+<tr>
+  <td></td></tr>
+
+
+</tbody>
+</table>
+
+<a class="text-center">Como adicionar ao android/iphone/outlook/gmail?</a>
+
+
+{% endblock %}
